@@ -46,12 +46,12 @@ main {
     width: 70%;
 }
 
-    /* MAIN_TITOLO */
+/* MAIN_TITOLO */
 
 #titolo div {
     line-height: 0.8;
     width: 650px;
-    
+
 }
 
 #titolo div h1 {
@@ -59,7 +59,7 @@ main {
     font-size: 6rem;
 }
 
-    /* MAIN_ISTRUZIONI */
+/* MAIN_ISTRUZIONI */
 
 #istruzioni h3 {
     color: #d20094;
@@ -87,18 +87,20 @@ main {
     font-weight: 700;
 }
 
-#form div a {
-    width: 150px;
+#btnPro {
+    width: 200px;
     background-color: #00ffff;
     display: inline-block;
     width: 150px;
     height: 50px;
-    background-color: #00ffff;
-   
+    margin-left: 270px;
+    font-weight: bold;
+    box-shadow: 0px 0px 55px 0px rgba(0, 255, 255, 0.49);
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
 }
 
-
-
-
-
-
+#form {
+    width: 862px;
+}
