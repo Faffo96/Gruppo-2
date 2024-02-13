@@ -1,5 +1,6 @@
-/* GENERAL */
+/* INDEX */
 
+    /* GENERAL */
 body {
     margin: 0;
     padding: 0;
@@ -32,7 +33,7 @@ h6 {
     font-weight: bold;
 }
 
-/* HEADER */
+    /* HEADER */
 
 
 header {
@@ -43,14 +44,14 @@ header img {
     padding: 50px 200px;
 }
 
-/* MAIN */
+    /* MAIN */
 
 main {
     padding: 10px 200px;
     width: 70%;
 }
 
-/* MAIN_TITOLO */
+        /* MAIN_TITOLO */
 
 #titolo div {
     line-height: 0.8;
@@ -64,14 +65,17 @@ main {
     margin-top: 20px; 
 }
 
-/* MAIN_ISTRUZIONI */
+        /* MAIN_ISTRUZIONI */
 
 #istruzioni {
     width: 45%;
 }
 
-#istruzioni h3 {
+#istruzioni h3, .askTotal {
     color: #d20094;
+}
+
+#istruzioni h3 {
     font-size: 1.7rem;
     margin-bottom: 15px;
 }
@@ -113,11 +117,73 @@ main {
     width: 100%;
 }
 
-/* FEEDBACK */
+/* RISULTATO */
 
-#main_feedback {
+    /* RISULTATO MAIN */
+
+.risultato_header {
     text-align: center;
 }
 
+.risultato_header h1{
+    margin: 0;
+}
+
+.risultato_header h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+#correct, #wrong {
+    width: 220px;
+    height: 150px;
+    display: inline-block;
+    border: 1px solid;
+    line-height: 1.1;
+}
+
+#grafico {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    border: 2px solid green;
+    margin: 0 71px;
+}
+
+#correct, #wrong, #grafico {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.risultato_main div h3, .risultato_main div p {
+    margin: 0;
+}
+
+.risultato {
+margin: 0 auto;
+width: 1000px;
+text-align: center;
+}
+
+.risultato_main {
+    vertical-align: middle;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.risultato_footer {
+   padding: 50px;
+   padding-top: 0;
+}
+
+.risultato_footer input {
+    padding:15px 50px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 1rem;
+    font-weight: bold;
+}
 
 
