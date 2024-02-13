@@ -220,6 +220,18 @@ text-align: center;
     display: inline;
 }
 
+#clock {
+    width: 150px;
+    height: 150px;
+    border: 1px solid;
+    position: relative;
+}
+
+#clock div {
+    position: absolute;
+    transform: translate(500px, 50px);
+}
+
 
 /* FEEDBACK */
 
