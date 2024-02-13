@@ -34,8 +34,12 @@ h6 {
 
 /* HEADER */
 
+
+header {
+    height: 120px;
+}
 header img {
-    width: 250px;
+    width: 200px;
     padding: 50px 200px;
 }
 
@@ -50,37 +54,41 @@ main {
 
 #titolo div {
     line-height: 0.8;
-    width: 650px;
+    width: 450px;
 
 }
 
 #titolo div h1 {
     font-weight: 400;
-    font-size: 6rem;
+    font-size: 4.5rem;
+    margin-top: 20px; 
 }
 
 /* MAIN_ISTRUZIONI */
 
+#istruzioni {
+    width: 45%;
+}
+
 #istruzioni h3 {
     color: #d20094;
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     margin-bottom: 15px;
 }
 
 #istruzioni p {
-    width: 700px;
-    font-size: 1.1rem;
+
+    font-size: 0.9rem;
     margin-bottom: 35px;
 }
 
 #istruzioni ul {
     margin-bottom: 80px;
-    font-size: 1.1rem;
 }
 
 #istruzioni ul li {
     margin-bottom: 10px;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 #form div label {
@@ -88,7 +96,7 @@ main {
 }
 
 #btnPro {
-    width: 200px;
+    width: 100px;
     background-color: #00ffff;
     display: inline-block;
     width: 150px;
@@ -102,5 +110,14 @@ main {
 }
 
 #form {
-    width: 862px;
+    width: 100%;
 }
+
+/* FEEDBACK */
+
+#main_feedback {
+    text-align: center;
+}
+
+
+
