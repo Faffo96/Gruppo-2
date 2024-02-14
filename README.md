@@ -40,7 +40,7 @@ a sua volta, è suddiviso in:
 - `Feedback page`
   <!-- da rivedere il nome dei file siccome sono uguali --> 
 > _JAVASCRIPT_
-- `Welcome page (index)`
+- `JS Welcome page (index)`
 - `Question page `
 - `Results page`
 - `Feedback page`
@@ -60,9 +60,9 @@ Spiegare come ci siano i vari collegamenti tra pagine, chart.js per il timer, ec
 | PARTECIPANTI | RUOLI | LINK ACCOUNT GIT | 
 | ----------- |  ----------- | ----------- | 
 | Fabio Scaramozzino | Team leader |... | 
-| Ferdinando di Nocera | membro gruppo | ...|
+| Ferdinando Di Nocera | membro gruppo | ...|
 | Felice Cesarano| membro gruppo |...| 
-| Rosanna Giordano|  membro gruppo |...| 
+| Rosa Giordano|  membro gruppo |...| 
 | Elena Kekic | membro gruppo | ...|
 | Giancarlo Amoruso | membro gruppo |... | 
 
