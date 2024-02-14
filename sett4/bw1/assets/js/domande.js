@@ -1,4 +1,4 @@
-const documentClock = document.getElementById('clock');
+const documentCanvasClock = document.getElementById('canvasClock');
 const testoDomanda = document.getElementById('documentDomanda');
 const documentRisposta1 = document.getElementById('risposta1');
 const documentRisposta2 = document.getElementById('risposta2');
@@ -7,6 +7,8 @@ const documentRisposta4 = document.getElementById('risposta4');
 // variabili globali 
 let domandaCorrente = 0;
 let intervallo;
+Chart.defaults.global.tooltips.enabled = false;
+
 
 const questions = [
   {
@@ -21,7 +23,7 @@ const questions = [
   {
 
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -86,12 +88,25 @@ const questions = [
   },
 ];
 
-documentClock.getContext('2d');
+let ctxClock = documentCanvasClock.getContext('2d');
 
-Chart.defaults.global.tooltips.enabled = false;
+// ctxClock.font = "bold 48px serif";
+// ctxClock.strokeText("Hello world", 50, 100);
+
+// Testo da centrare
+// const text = 'Testo Centrato';
+
+// // Calcolare le coordinate x e y per centrare il testo
+// const textWidth = ctxClock.measureText(text).width;
+// const x = (documentCanvasClock.width - textWidth) / 2;
+// const y = documentCanvasClock.height / 2 + fontSize / 2; // Aggiungi fontSize / 2 per centrare verticalmente
+
+// // Disegnare il testo centrato sul canvas
+// ctxClock.fillText(text, x, y);
+
 
 let myData = [0, 1];
-let chart = new Chart(documentClock, {
+let chart = new Chart(documentCanvasClock, {
   type: 'doughnut',
   data: {
     datasets: [{
@@ -114,10 +129,10 @@ const visualizzaDati = () => {
   documentRisposta2.innerText = questions[domandaCorrente].incorrect_answers[0];
   documentRisposta3.innerText = questions[domandaCorrente].incorrect_answers[1];
   documentRisposta4.innerText = questions[domandaCorrente].incorrect_answers[2];
-  if (questions[domandaCorrente].incorrect_answers.length == 1){
-documentRisposta3.style.display = 'none';
-documentRisposta4.style.display = 'none';
-  }else {
+  if (questions[domandaCorrente].incorrect_answers.length == 1) {
+    documentRisposta3.style.display = 'none';
+    documentRisposta4.style.display = 'none';
+  } else {
     documentRisposta3.style.display = 'inline';
     documentRisposta4.style.display = 'inline';
   }
@@ -134,18 +149,18 @@ const startTimer = (durataMillis) => {
 
   intervallo = setInterval(function () {
 
-    index1 += 1 / durataMillis * 100
-    index2 -= 1 / durataMillis * 100
+    index1 += 1 / durataMillis * 100;
+    index2 -= 1 / durataMillis * 100;
 
     let secondiRimanenti = Math.floor((durataMillis - milliSecondi) / 1000);
     documentSecondi.innerText = secondiRimanenti;
 
-    milliSecondi += 100
+    milliSecondi += 100;
 
     if (milliSecondi >= durataMillis) {
       clearInterval(intervallo);
       domandaSuccessiva();
-      return
+      return;
     }
 
     myData = [index1, index2];
@@ -153,7 +168,7 @@ const startTimer = (durataMillis) => {
     chart.update();
   }, 100);
 
-}
+};
 
 
 const domandaSuccessiva = () => {
@@ -164,7 +179,7 @@ const domandaSuccessiva = () => {
   }
   visualizzaDati();
   startTimer(30000);
-}
+};
 
 function init() {
   visualizzaDati();
@@ -175,14 +190,14 @@ function init() {
 }
 documentRisposta1.addEventListener("click", function () {
   domandaSuccessiva();
-})
+});
 documentRisposta2.addEventListener("click", function () {
   domandaSuccessiva();
-})
+});
 documentRisposta3.addEventListener("click", function () {
   domandaSuccessiva();
-})
+});
 documentRisposta4.addEventListener("click", function () {
   domandaSuccessiva();
-})
+});
 addEventListener("load", init);
