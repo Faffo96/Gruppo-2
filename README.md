@@ -58,13 +58,13 @@ Spiegare come ci siano i vari collegamenti tra pagine, chart.js per il timer, ec
 ## Partecipanti
 
 | PARTECIPANTI | RUOLI | LINK ACCOUNT GIT | 
-| ----------- |  ----------- | | 
-| Fabio Scaramozzino | Team leader | | 
-| Ferdinando di Nocera | membro gruppo | |
-| Felice Cesarano| membro gruppo || 
-| Rosanna Giordano|  membro gruppo || 
-| Elena Kekic | membro gruppo | |
-| Giancarlo Amoruso | membro gruppo | | 
+| ----------- |  ----------- | ----------- | 
+| Fabio Scaramozzino | Team leader |... | 
+| Ferdinando di Nocera | membro gruppo | ...|
+| Felice Cesarano| membro gruppo |...| 
+| Rosanna Giordano|  membro gruppo |...| 
+| Elena Kekic | membro gruppo | ...|
+| Giancarlo Amoruso | membro gruppo |... | 
 
 
 <!-- anchor per tornare susususu --> 
