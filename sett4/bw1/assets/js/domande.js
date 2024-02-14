@@ -8,6 +8,8 @@ const documentRisposta4 = document.getElementById('risposta4');
 let domandaCorrente = 0;
 let intervallo;
 Chart.defaults.global.tooltips.enabled = false;
+let risposte = [];
+
 
 
 const questions = [
@@ -90,21 +92,6 @@ const questions = [
 
 let ctxClock = documentCanvasClock.getContext('2d');
 
-// ctxClock.font = "bold 48px serif";
-// ctxClock.strokeText("Hello world", 50, 100);
-
-// Testo da centrare
-// const text = 'Testo Centrato';
-
-// // Calcolare le coordinate x e y per centrare il testo
-// const textWidth = ctxClock.measureText(text).width;
-// const x = (documentCanvasClock.width - textWidth) / 2;
-// const y = documentCanvasClock.height / 2 + fontSize / 2; // Aggiungi fontSize / 2 per centrare verticalmente
-
-// // Disegnare il testo centrato sul canvas
-// ctxClock.fillText(text, x, y);
-
-
 let myData = [0, 1];
 let chart = new Chart(documentCanvasClock, {
   type: 'doughnut',
@@ -136,6 +123,8 @@ const visualizzaDati = () => {
     documentRisposta3.style.display = 'inline';
     documentRisposta4.style.display = 'inline';
   }
+  document.getElementById("mostraNDomande").innerText = "QUESTION " + (parseInt(domandaCorrente) + 1);
+
 };
 
 
@@ -159,6 +148,7 @@ const startTimer = (durataMillis) => {
 
     if (milliSecondi >= durataMillis) {
       clearInterval(intervallo);
+      risposte.push(false); 
       domandaSuccessiva();
       return;
     }
@@ -170,34 +160,58 @@ const startTimer = (durataMillis) => {
 
 };
 
+const verificaDomanda = (pulsanteCliccato) => {
+  let documentRisposte = Array.from(document.getElementsByClassName("btnAsk"));
+  for (let index = 0; index < documentRisposte.length; index++) {
+    const rispostaCorrente = documentRisposte[index].innerText;
+    if (documentRisposte[pulsanteCliccato - 1] !== undefined) {
+      const rispostaUtente = documentRisposte[pulsanteCliccato - 1].innerText;
+      if (rispostaUtente === rispostaCorrente) {
+        risposte.push(true);
+        break;
+      } else {
+        risposte.push(false);
+        break;
+      } 
+    }
+  }
+}
+
 
 const domandaSuccessiva = () => {
+
+  console.log(risposte);
   clearInterval(intervallo);
   domandaCorrente++;
   if (domandaCorrente > questions.length - 1) {
     window.location.href = "risultato.html";
   }
   visualizzaDati();
-  startTimer(30000);
+  startTimer(5000);
 };
 
 function init() {
   visualizzaDati();
 
 
-  startTimer(30000);
+  startTimer(5000);
 
 }
 documentRisposta1.addEventListener("click", function () {
+  verificaDomanda(1);
   domandaSuccessiva();
 });
 documentRisposta2.addEventListener("click", function () {
+  verificaDomanda(2);
   domandaSuccessiva();
 });
 documentRisposta3.addEventListener("click", function () {
+  verificaDomanda(3);
   domandaSuccessiva();
 });
 documentRisposta4.addEventListener("click", function () {
+  verificaDomanda(4);
   domandaSuccessiva();
 });
 addEventListener("load", init);
+

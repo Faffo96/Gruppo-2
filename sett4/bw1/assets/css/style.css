@@ -202,12 +202,14 @@ main {
 /* DOMANDE */
 
 .div2Ask {
-    width: 600px;
+    width: 100%;
     margin-top: 100px;
+   
+    
 }
 
 .div2Ask h1 {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .div3ask {
@@ -229,6 +231,9 @@ main {
 
 .div4Ask {
     margin-top: 100px;
+    position: absolute;
+top: 570px;
+left: 695px;
 
 }
 
@@ -304,11 +309,11 @@ main {
 
 #containerClock {
     /* border: 1px solid black; */
-    width: 300px;
+    width: 250px;
     vertical-align: middle;
     position: absolute;
     top: 40px;
-    left: 1200px;
+    left: 1040px;
 }
 
 
