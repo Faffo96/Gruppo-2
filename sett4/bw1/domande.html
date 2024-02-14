@@ -18,17 +18,17 @@
         <img src="assets/img/epicode_logo.png" alt="Logo">
     </header>
     <main class="mg-0auto ta-center">
-        <div>
-            <canvas id="clock">
-              
-            </canvas>
-              <div>
-                    <p>SECONDS</p>
-                    <p id="documentSecondi">60</p>
-                    <p>REMAINING</p>
-                </div>
+        <div id="containerClock">
+            <div id="clockDiv">
+                <canvas id="canvasClock"> </canvas>                
+            </div>
+            <div id="scritteTimer">
+                <p>SECONDS</p>
+                <p id="documentSecondi">60</p>
+                <p>REMAINING</p>
+            </div>            
         </div>
-        <div>
+        <div id="">
             <div class="mg-0auto div2Ask ">
                 <h1 id="documentDomanda">How can I create a checkbox in html?</h1>
             </div>
@@ -44,12 +44,18 @@
                         class="btnAsk"><code>&LT;input type="button"&gt;</code></button>
                 </div>
             </div>
+
+
             <div class="div4Ask">
                 <h4 id="mostraNDomande">QUESTION 1</h4>
                 <h4 class="askTotal">/10</h4>
             </div>
+
+            
         </div>
     </main>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
     <script src="assets/js/domande.js"></script>
 </body>
