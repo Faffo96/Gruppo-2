@@ -60,12 +60,12 @@ Spiegare come ci siano i vari collegamenti tra pagine, chart.js per il timer, la
 
 | PARTECIPANTI | RUOLI | 
 | ----------- |  ----------- |
-| Fabio | Team leader |
-| Ferdinando | membro gruppo |
-| Felice | membro gruppo |
-| Rosa|  membro gruppo |
-| Elena | membro gruppo |
-| Giancarlo | membro gruppo |
+| Fabio Scaramozzino | Team leader |
+| Ferdinando di Nocera | membro gruppo |
+| Felice Cesarano| membro gruppo |
+| Rosanna Giordano|  membro gruppo |
+| Elena Kekic | membro gruppo |
+| Giancarlo Amoruso | membro gruppo |
 
 
 <!-- anchor per tornare su --> 
