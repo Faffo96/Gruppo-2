@@ -148,7 +148,7 @@ const startTimer = (durataMillis) => {
 
     if (milliSecondi >= durataMillis) {
       clearInterval(intervallo);
-      risposte.push(false);
+      risposte.push(false); 
       domandaSuccessiva();
       return;
     }
@@ -172,14 +172,14 @@ const verificaDomanda = (pulsanteCliccato) => {
       } else {
         risposte.push(false);
         break;
-      }
+      } 
     }
   }
 }
 
 
 const domandaSuccessiva = () => {
-  localStorage.setItem('risposte', risposte);
+
   console.log(risposte);
   clearInterval(intervallo);
   domandaCorrente++;
@@ -187,58 +187,31 @@ const domandaSuccessiva = () => {
     window.location.href = "risultato.html";
   }
   visualizzaDati();
-  startTimer(30000);
+  startTimer(5000);
 };
 
 function init() {
   visualizzaDati();
 
 
-  startTimer(30000);
+  startTimer(5000);
 
 }
-
-function disabilitaRisposte() {
-  documentRisposta1.setAttribute("disabled", "");
-  documentRisposta2.setAttribute("disabled", "");
-  documentRisposta3.setAttribute("disabled", "");
-  documentRisposta4.setAttribute("disabled", "");
-}
-
-function ablitaRisposte() {
-  documentRisposta1.removeAttribute("disabled");
-  documentRisposta2.removeAttribute("disabled");
-  documentRisposta3.removeAttribute("disabled");
-  documentRisposta4.removeAttribute("disabled");
-}
-
-
-
 documentRisposta1.addEventListener("click", function () {
-  console.log(risposte);
-  disabilitaRisposte()
   verificaDomanda(1);
   domandaSuccessiva();
-  ablitaRisposte();
 });
 documentRisposta2.addEventListener("click", function () {
-  disabilitaRisposte()
   verificaDomanda(2);
   domandaSuccessiva();
-  ablitaRisposte();
 });
 documentRisposta3.addEventListener("click", function () {
-  disabilitaRisposte()
   verificaDomanda(3);
   domandaSuccessiva();
-  ablitaRisposte();
 });
 documentRisposta4.addEventListener("click", function () {
-  disabilitaRisposte()
   verificaDomanda(4);
   domandaSuccessiva();
-  ablitaRisposte();
 });
 addEventListener("load", init);
-
 
