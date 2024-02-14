@@ -71,7 +71,7 @@ main {
     width: 45%;
 }
 
-#istruzioni h3, .askTotal {
+#istruzioni h3, .askTotal, #required{
     color: #d20094;
 }
 
@@ -111,6 +111,11 @@ main {
     border: none;
     font-size: 1.1em;
     cursor: pointer;
+}
+
+#required {
+    margin: 0;
+    font-size: 0.7em;
 }
 
 #form {
