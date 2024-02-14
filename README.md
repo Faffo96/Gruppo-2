@@ -32,7 +32,7 @@ Il nostro progetto è diviso in:
 - 4 pagine Javascript
 - 7 immagini e 2 immagini svg
 ```
- che a sua volta è suddiviso in: 
+a sua volta, è suddiviso in: 
 > _HTML_
 - `Welcome page (index)`
 - `Question page `
@@ -57,14 +57,14 @@ Spiegare come ci siano i vari collegamenti tra pagine, chart.js per il timer, ec
 
 ## Partecipanti
 
-| PARTECIPANTI | RUOLI | 
-| ----------- |  ----------- |
-| Fabio Scaramozzino | Team leader |
-| Ferdinando di Nocera | membro gruppo |
-| Felice Cesarano| membro gruppo |
-| Rosanna Giordano|  membro gruppo |
-| Elena Kekic | membro gruppo |
-| Giancarlo Amoruso | membro gruppo |
+| PARTECIPANTI | RUOLI | LINK ACCOUNT GIT | 
+| ----------- |  ----------- | | 
+| Fabio Scaramozzino | Team leader | | 
+| Ferdinando di Nocera | membro gruppo | |
+| Felice Cesarano| membro gruppo || 
+| Rosanna Giordano|  membro gruppo || 
+| Elena Kekic | membro gruppo | |
+| Giancarlo Amoruso | membro gruppo | | 
 
 
 <!-- anchor per tornare susususu --> 
