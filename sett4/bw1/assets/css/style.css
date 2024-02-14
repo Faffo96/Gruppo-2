@@ -1,6 +1,6 @@
 /* INDEX */
 
-    /* GENERAL */
+/* GENERAL */
 body {
     margin: 0;
     padding: 0;
@@ -33,25 +33,26 @@ h6 {
     font-weight: bold;
 }
 
-    /* HEADER */
+/* HEADER */
 
 
 header {
     height: 120px;
 }
+
 header img {
     width: 200px;
     padding: 50px 200px;
 }
 
-    /* MAIN */
+/* MAIN */
 
 main {
     padding: 10px 200px;
     width: 70%;
 }
 
-        /* MAIN_TITOLO */
+/* MAIN_TITOLO */
 
 #titolo div {
     line-height: 0.8;
@@ -62,16 +63,18 @@ main {
 #titolo div h1 {
     font-weight: 400;
     font-size: 4.5rem;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
-        /* MAIN_ISTRUZIONI */
+/* MAIN_ISTRUZIONI */
 
 #istruzioni {
     width: 45%;
 }
 
-#istruzioni h3, .askTotal, #required{
+#istruzioni h3,
+.askTotal,
+#required {
     color: #d20094;
 }
 
@@ -99,7 +102,8 @@ main {
     font-weight: 700;
 }
 
-#btnPro, #btnFeedback {
+#btnPro,
+#btnFeedback {
     width: 100px;
     background-color: #00ffff;
     display: inline-block;
@@ -124,13 +128,13 @@ main {
 
 /* RISULTATO */
 
-    /* RISULTATO MAIN */
+/* RISULTATO MAIN */
 
 .risultato_header {
     text-align: center;
 }
 
-.risultato_header h1{
+.risultato_header h1 {
     margin: 0;
 }
 
@@ -140,7 +144,8 @@ main {
     margin: 0;
 }
 
-#correct, #wrong {
+#correct,
+#wrong {
     width: 220px;
     height: 150px;
     display: inline-block;
@@ -156,19 +161,22 @@ main {
     margin: 0 71px;
 }
 
-#correct, #wrong, #grafico {
+#correct,
+#wrong,
+#grafico {
     display: inline-block;
     vertical-align: middle;
 }
 
-.risultato_main div h3, .risultato_main div p {
+.risultato_main div h3,
+.risultato_main div p {
     margin: 0;
 }
 
 .risultato {
-margin: 0 auto;
-width: 1000px;
-text-align: center;
+    margin: 0 auto;
+    width: 1000px;
+    text-align: center;
 }
 
 .risultato_main {
@@ -178,12 +186,12 @@ text-align: center;
 }
 
 .risultato_footer {
-   padding: 50px;
-   padding-top: 0;
+    padding: 50px;
+    padding-top: 0;
 }
 
 .risultato_footer input {
-    padding:15px 50px;
+    padding: 15px 50px;
     background-color: transparent;
     color: white;
     border: 2px solid white;
@@ -195,6 +203,7 @@ text-align: center;
 
 .div2Ask {
     width: 600px;
+    margin-top: 100px;
 }
 
 .div2Ask h1 {
@@ -202,22 +211,25 @@ text-align: center;
 }
 
 .div3ask {
-    width: 40%;
+    width: 100%;
 }
 
 .btnAsk {
-    width: 312px;
+    width: 450px;
+    height: 75px;
     padding: 20px;
     margin-right: 20px;
     border-radius: 30px;
-    background-color: #232A52;
+    background-color: transparent;
     color: white;
     font-size: 1em;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .div4Ask {
     margin-top: 100px;
+
 }
 
 .div4Ask h4 {
@@ -230,25 +242,87 @@ text-align: center;
     height: 150px;
     border: 1px solid;
     position: relative;
+    /* border: 1px solid green; */
 }
 
 #clock div {
     position: absolute;
     transform: translate(500px, 50px);
+    /* border: 1px solid orange; */
+
+}
+
+#clockDiv {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    /* border: 1px solid red; */
+}
+
+#scritteTimer {
+    /* border: 1px solid blue; */
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top: -45px;
+    left: -105px;
+    width: 50px;
+
+}
+
+#scritteTimer p {
+    line-height: 1;
+    font-size: 0.5rem;
+    /* border: 1px solid red; */
+    margin: 0;
+}
+
+/* @keyframes shine {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.5);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+} */
+
+
+#scritteTimer #documentSecondi {
+    font-size: 2.5rem;
+    /* border: 1px solid orange; */
+    animation: shine 2s forwards;
+
+    /* filter: brightness(200%);
+    color: blueviolet; */
+
+}
+
+#containerClock {
+    /* border: 1px solid black; */
+    width: 300px;
+    vertical-align: middle;
+    position: absolute;
+    top: 40px;
+    left: 1200px;
 }
 
 
 /* FEEDBACK */
 
 
-    /* CONTENITORE CON SCRITTE */ 
+/* CONTENITORE CON SCRITTE */
 
 #mainFeedback {
     text-align: center;
 }
 
 h1 {
-font-size: 50px;
+    font-size: 50px;
 }
 
 #mainP {
@@ -265,13 +339,13 @@ section {
     margin-top: 30px;
 }
 
-        /* STELLE */ 
+/* STELLE */
 
 .stelle {
-   margin-top: 30px;
+    margin-top: 30px;
 }
 
-    /* INPUT */ 
+/* INPUT */
 
 #commentoUtente {
     background-color: transparent;
@@ -279,9 +353,9 @@ section {
     width: 650px;
     padding: 15px;
     padding-left: 30px;
-    border: none; 
+    border: none;
     border-bottom: 1px solid #d20094;
-    outline: none; 
+    outline: none;
 }
 
 /* BUTTON */
@@ -292,5 +366,5 @@ section {
 }
 
 footer {
-    width:50%;
+    width: 50%;
 }
