@@ -5,9 +5,10 @@
 
 <!-- piccola descrizione del progetto --> 
 ### L'obiettivo di questa build week era quella creare una copia della Benchmark platform di EPICODE quanto più possibile fedele all'originale, sia per aspetto, che per funzionalità. 
-
+<br>
 <!-- SPAZIO DA METTERE + BADGES (dynamic e static) --> 
 <!-- https://shields.io/badges // link per creare le badges --> 
+<br>
 
 Ci siamo focalizzati su due principali fini : 
 1. _La creazione del layout con HTML e CSS con classi pre-organizzate_
