@@ -53,7 +53,7 @@ il nostro progetto è suddiviso in:
  
 - Results page
 
-  ![Screenshot 2024-02-15 230140](https://github.com/Faffo96/gruppo-2/assets/157897660/6561b925-1039-4e63-9c36-f2aa0908bcec)
+![resultts](https://github.com/Elekekic/EPICODE-REPO/assets/157897660/8afef1db-0d65-42f2-9403-81fbf85a229f)
 > Terza pagine dove verranno visualizzati i dati raccolti dalle risposte in percentuale, con anche il numero di risposte corrette e sbagliati sottostanti, per proseguire bisogna cliccare il button "rate us"
 
  <br>
