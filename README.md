@@ -87,7 +87,14 @@ il nostro progetto è suddiviso in:
 
   
 ## Come funziona 
-Spiegare come ci siano i vari collegamenti tra pagine, chart.js per il timer, ecc...
+in pratica spiegare il js delle varie pagine 
+
+- prima pagina : abbiamo usato una funzione per far si che se la checkbox e stata checkata, quando anche il button verrà cliccato, ci poterà direttamente alla prossima pagina.
+  altrimenti metterà un messaggio sotto la checkbox per indicare all'user si eseguire prima quel step per riuscire a proseguire. 
+- seconda pagina : 
+- terza pagina :
+- quarta pagina :
+- extra quinta pagina : (?) 
 
 <br> 
 <!-- SPAZIO DA METTERE + COLLEGARE IL LINK DELL'ACCOUNT GIT A CIASCUNO DI NOI (metti badges anche qua) --> 
@@ -100,8 +107,8 @@ Spiegare come ci siano i vari collegamenti tra pagine, chart.js per il timer, ec
 | Ferdinando Di Nocera | membro gruppo |![Static Badge](https://img.shields.io/badge/fdinocera-%23e2940d?style=for-the-badge&logo=github) |
 | Felice Cesarano| membro gruppo |![Static Badge](https://img.shields.io/badge/felicecesarano-%233c4211?style=for-the-badge&logo=github) | 
 | Rosa Giordano|  membro gruppo |![Static Badge](https://img.shields.io/badge/Rosannag16-%2323e3ea?style=for-the-badge&logo=github) | 
-| Elena Kekic | membro gruppo | ![Static Badge](https://img.shields.io/badge/Elekekic-%23a122cc?style=for-the-badge&logo=github) |
-| Giancarlo Amoruso | membro gruppo | ![Static Badge](https://img.shields.io/badge/TheGianky-%23d6cd24?style=for-the-badge&logo=github) | 
+| Elena Kekic | membro gruppo | ![Static Badge](https://img.shields.io/badge/Elekekic-%23a30049?style=for-the-badge&logo=github) |
+| Giancarlo Amoruso | membro gruppo | ![Static Badge](https://img.shields.io/badge/TheGianky-%235200af?style=for-the-badge&logo=github) | 
 
 <br>
 
