@@ -36,17 +36,16 @@ il nostro progetto è suddiviso in:
 - Welcome page (index)
 
 ![index](https://github.com/Elekekic/EPICODE-REPO/assets/157897660/bd8e8e08-e745-4474-8e9c-d396cb854126)
-> la prima pagina, composta da un titolo e vari paragrafi, con un button e una checkbox. Attenzione però, se non si clicca sulla checkbox non sarà possibile andare avanti!
+<div align="center"> la prima pagina, composta da un titolo e vari paragrafi, con un button e una checkbox. Attenzione però, se non si clicca sulla checkbox non sarà possibile andare avanti! </div>
 
 
-<br> 
+<br>
 
 
 - Question page
 
 ![Domande-](https://github.com/Elekekic/EPICODE-REPO/assets/157897660/8c6db3b3-0155-42e8-aef1-339e4d0e7bf1)
-> Seconda pagina, dove ci saranno una serie di domande e risposte con un timer in alto a destra.
-> Alla sua scadenza le domande comunque proseguiranno
+<div align="center"> Seconda pagina, dove ci saranno una serie di domande e risposte con un timer in alto a destra. Alla sua scadenza le domande comunque proseguiranno </div>
 
  <br> 
 
@@ -54,7 +53,7 @@ il nostro progetto è suddiviso in:
 - Results page
 
 ![resultts](https://github.com/Elekekic/EPICODE-REPO/assets/157897660/8afef1db-0d65-42f2-9403-81fbf85a229f)
-> Terza pagine dove verranno visualizzati i dati raccolti dalle risposte in percentuale, con anche il numero di risposte corrette e sbagliati sottostanti, per proseguire bisogna cliccare il button "rate us"
+<div align="center">  Terza pagine dove verranno visualizzati i dati raccolti dalle risposte in percentuale, con anche il numero di risposte corrette e sbagliati sottostanti, per proseguire bisogna cliccare il button "rate us" </div>
 
  <br>
 
@@ -62,7 +61,7 @@ il nostro progetto è suddiviso in:
 - Feedback page
 
 ![feedback](https://github.com/Faffo96/gruppo-2/assets/157897660/d28399e4-0281-4ed2-b30b-1e0b1e332238)
-> Quarta pagina, in questa pagina si può lasciare una valutazione tramite la selezione da 1 a 10 delle stelle e lasciando un commento 
+ <div align="center">  Quarta pagina, in questa pagina si può lasciare una valutazione tramite la selezione da 1 a 10 delle stelle e lasciando un commento </div>
 
 
  <br> 
