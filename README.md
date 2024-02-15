@@ -71,7 +71,7 @@ Spiegare come ci siano i vari collegamenti tra pagine, chart.js per il timer, ec
 
 <br>
 
-- [Torna su! :D](#table-of-contents)
+- [Torna su! :D](#Build-week---Gruppo-2)
 
 <!-- anchor per tornare susususu --> 
 
