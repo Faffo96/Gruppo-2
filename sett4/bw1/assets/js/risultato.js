@@ -27,7 +27,7 @@ let chart = new Chart(documentGrafico, {
     options: {
         maintainAspectRatio: false,
         hover: { mode: null },
-        animation: { duration: 0, },
+        animation: { duration: 2000, },
         cutoutPercentage: 75,
     }
 });
@@ -66,6 +66,7 @@ function stampa() {
     }else {
         documentScrittaGrafico_h4.innerText = 'Oh sorry!'
         documentScrittaGrafico_span.innerText = 'You failed the exam'
+        documentScrittaGrafico_span.style.color = "#d20094";
         documentScrittaGrafico_p.innerText = `The teacher will get in touch with you to understand your mistakes, you will definitely improve in the future.`
     }
 }
