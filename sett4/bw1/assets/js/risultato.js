@@ -10,6 +10,7 @@ let documentGrafico = document.getElementById('graficoCanvas');
 let documentScrittaGrafico_h4 = document.querySelector('#scritteGrafico h4')
 let documentScrittaGrafico_span = document.querySelector('#scritteGrafico_span')
 let documentScrittaGrafico_p = document.querySelector('#scritteGrafico p')
+let documentBtn = document.querySelector('.risultato_footer input')
 
 Chart.defaults.global.tooltips.enabled = false;
 
@@ -77,3 +78,8 @@ function init() {
 }
 
 addEventListener('load', init);
+
+documentBtn.addEventListener('click', function (e) {
+    e.preventDefault;
+    window.location.href = 'feedback.html'
+});

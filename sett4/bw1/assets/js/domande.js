@@ -1,3 +1,4 @@
+
 const documentCanvasClock = document.getElementById('canvasClock');
 const testoDomanda = document.getElementById('documentDomanda');
 const documentRisposta1 = document.getElementById('risposta1');
@@ -110,12 +111,15 @@ let chart = new Chart(documentCanvasClock, {
   }
 });
 
+
+
 const visualizzaDati = () => {
-  testoDomanda.innerText = questions[domandaCorrente].question;
-  documentRisposta1.innerText = questions[domandaCorrente].correct_answer;
-  documentRisposta2.innerText = questions[domandaCorrente].incorrect_answers[0];
-  documentRisposta3.innerText = questions[domandaCorrente].incorrect_answers[1];
-  documentRisposta4.innerText = questions[domandaCorrente].incorrect_answers[2];
+  let domandaRandomIndex = Math.floor(Math.random() * questions.length);
+  testoDomanda.innerText = questions[domandaRandomIndex].question;
+  documentRisposta1.innerText = questions[domandaRandomIndex].correct_answer;
+  documentRisposta2.innerText = questions[domandaRandomIndex].incorrect_answers[0];
+  documentRisposta3.innerText = questions[domandaRandomIndex].incorrect_answers[1];
+  documentRisposta4.innerText = questions[domandaRandomIndex].incorrect_answers[2];
   if (questions[domandaCorrente].incorrect_answers.length == 1) {
     documentRisposta3.style.display = 'none';
     documentRisposta4.style.display = 'none';
@@ -215,7 +219,6 @@ function ablitaRisposte() {
 
 
 documentRisposta1.addEventListener("click", function () {
-  console.log(risposte);
   disabilitaRisposte()
   verificaDomanda(1);
   domandaSuccessiva();
