@@ -99,7 +99,7 @@ Spiegare come ci siano i vari collegamenti tra pagine, chart.js per il timer, ec
 | ----------- |  ----------- | ----------- | 
 | Fabio Scaramozzino | Team leader | ![Static Badge](https://img.shields.io/badge/Faffo96-%233eb752?style=for-the-badge&logo=github) | 
 | Ferdinando Di Nocera | membro gruppo |![Static Badge](https://img.shields.io/badge/fdinocera-%23e2940d?style=for-the-badge&logo=github) |
-| Felice Cesarano| membro gruppo |![Static Badge](https://img.shields.io/badge/felicecesarano-%23d61111?style=for-the-badge&logo=github) | 
+| Felice Cesarano| membro gruppo |![Static Badge](https://img.shields.io/badge/felicecesarano-%233c4211?style=for-the-badge&logo=github) | 
 | Rosa Giordano|  membro gruppo |![Static Badge](https://img.shields.io/badge/Rosannag16-%2323e3ea?style=for-the-badge&logo=github) | 
 | Elena Kekic | membro gruppo | ![Static Badge](https://img.shields.io/badge/Elekekic-%23a122cc?style=for-the-badge&logo=github) |
 | Giancarlo Amoruso | membro gruppo | ![Static Badge](https://img.shields.io/badge/TheGianky-%23d6cd24?style=for-the-badge&logo=github) | 
