@@ -165,7 +165,6 @@ main {
     width: 300px;
     height: 300px;
     display: inline-block;
-    border: 2px solid green;
     margin: 0 71px;
 }
 
@@ -206,6 +205,30 @@ main {
     font-size: 1rem;
     font-weight: bold;
 }
+
+#scritteGrafico > * {
+ font-size: 1rem;
+ margin: 0;
+}
+
+#scritteGrafico {
+    position: relative;
+    top: -210px;
+    margin: 0 auto;
+    
+}
+
+#scritteGrafico h4:nth-child(2) {
+    color: #00ffff;
+    margin-bottom: 20px;
+}
+
+#scritteGrafico p {
+    font-size: 0.7rem;
+    width: 145px;
+    margin: 0 auto;
+}
+
 
 
 /* DOMANDE */
