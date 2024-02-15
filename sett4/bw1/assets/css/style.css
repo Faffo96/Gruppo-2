@@ -128,6 +128,7 @@ main {
 
 /* RISULTATO */
 
+
 /* RISULTATO MAIN */
 
 .risultato_header {
@@ -165,7 +166,6 @@ main {
     width: 300px;
     height: 300px;
     display: inline-block;
-    border: 2px solid green;
     margin: 0 71px;
 }
 
@@ -207,14 +207,39 @@ main {
     font-weight: bold;
 }
 
+#scritteGrafico > * {
+ font-size: 1rem;
+ margin: 0;
+}
+
+#scritteGrafico {
+    position: relative;
+    top: -226px;
+    margin: 0 auto;
+    
+}
+
+#scritteGrafico h4:nth-child(2) {
+    color: #00ffff;
+    margin-bottom: 20px;
+}
+
+#scritteGrafico p {
+    font-size: 0.7rem;
+    width: 145px;
+    margin: 0 auto;
+}
+
+.risultato_footer input {
+cursor: pointer;
+}
+
 
 /* DOMANDE */
 
 .div2Ask {
-    width: 100%;
+    width: 1000px;
     margin-top: 100px;
-   
-    
 }
 
 .div2Ask h1 {
@@ -244,11 +269,10 @@ main {
 }
 
 .div4Ask {
+    
+    width: 100px;
+    margin: 0 auto;
     margin-top: 100px;
-    position: absolute;
-top: 570px;
-left: 695px;
-
 }
 
 .div4Ask h4 {
@@ -327,7 +351,7 @@ left: 695px;
     vertical-align: middle;
     position: absolute;
     top: 40px;
-    left: 1040px;
+    left: 62%
 }
 
 
@@ -362,6 +386,10 @@ section {
 
 .stelle {
     margin-top: 30px;
+}
+
+.stelle img:hover {
+    
 }
 
 /* INPUT */

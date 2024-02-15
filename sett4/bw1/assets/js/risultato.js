@@ -10,6 +10,7 @@ let documentGrafico = document.getElementById('graficoCanvas');
 let documentScrittaGrafico_h4 = document.querySelector('#scritteGrafico h4')
 let documentScrittaGrafico_span = document.querySelector('#scritteGrafico_span')
 let documentScrittaGrafico_p = document.querySelector('#scritteGrafico p')
+let documentBtn = document.querySelector('.risultato_footer input')
 
 Chart.defaults.global.tooltips.enabled = false;
 
@@ -27,7 +28,7 @@ let chart = new Chart(documentGrafico, {
     options: {
         maintainAspectRatio: false,
         hover: { mode: null },
-        animation: { duration: 0, },
+        animation: { duration: 2000, },
         cutoutPercentage: 75,
     }
 });
@@ -66,6 +67,7 @@ function stampa() {
     }else {
         documentScrittaGrafico_h4.innerText = 'Oh sorry!'
         documentScrittaGrafico_span.innerText = 'You failed the exam'
+        documentScrittaGrafico_span.style.color = "#d20094";
         documentScrittaGrafico_p.innerText = `The teacher will get in touch with you to understand your mistakes, you will definitely improve in the future.`
     }
 }
@@ -76,3 +78,8 @@ function init() {
 }
 
 addEventListener('load', init);
+
+documentBtn.addEventListener('click', function (e) {
+    e.preventDefault;
+    window.location.href = 'feedback.html'
+});
