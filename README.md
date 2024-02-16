@@ -90,38 +90,36 @@ in pratica spiegare il js delle varie pagine
 
 - _**prima pagina**_:
   
-la logica di questa pagina si basa sul click del button e della checkbox. 
-Se la checkbox è stata cliccata, quando anche il button verrà cliccato ci porterà direttamente alla prossima pagina.
-Altrimenti comparirà  un messaggio sotto la checkbox per indicare all'user di eseguire prima quel step per riuscire a proseguire. 
+La logica di questa pagina si basa sul click del button e della checkbox. 
+Se la checkbox è stata cliccata, quando anche il button verrà cliccato ci porterà direttamente alla prossima pagina,
+altrimenti comparirà un messaggio sotto la checkbox per indicare all'utente di eseguire prima quel step per riuscire a proseguire. 
 
 <br>
 
 - _**seconda pagina**_:
   
 Qua invece la logica è un po' più complessa:
-Abbiamo un array di domande e risposte da dover implementare nella pagina grazie a dei "document.getElementbyID" e "innerText". (continua)
+Questa pagina propone all'utente una serie di domande random avendo 2 o 4 risposte altretanto random. Ogni domanda ha un timer di 30 secondi con un grafico animato. 
+Allo scadere del timer passa automaticamente alla prossima domanda. 
 
 <br>
 
 - _**terza pagina**_:
 
-La logica qui fa si che ci porti i dati raccolti nella pagina prima in forma di array diviso in stringe, con valori booleani dentro.
+La logica qui fa si che ci porti i dati raccolti nella pagina prima in forma di grafico a ciambella. 
 I risultati poi, vengono visualizzati nel grafico a ciambella tramite quattro principali modalità: 
-1. Variabile di chart.js con le sue proprietà dentro in modo da porterlo visualizzare nella pagina
-2. Funzione denominata "stampa" fa si che per ogni risposta 'true' o 'false', si aggiungeranno alle loro rispettive variabili per tenere conto delle risposte date, per poi essere mostrate ai lati del grafico in forma di percentuale.
-3. Funzione di addEventListener che richiama al momento del caricamento della pagina la funzione 'init' avente dentro il grafico e la funzione stampa.
-4. Un'altra funzione di addEventListener che al click del button "rate us" ci porterà alla prossima pagina. 
+1. Il grafico viene implementato grazie alla libreria di chart.js. 
+2. Ai lati del grafico vengono inseriti i dati in percentuale.
+3. Al click del bottone "rate us" ci porterà alla prossima pagina. 
 
 <br>
 
 - _**quarta pagina**_:
 
-In questa pagina la maggior parte delle funzioni stanno nel attivare
-
+L'utente dovrà lasciare una valutazione con le stelline e un commento; al completamento della valutazione l'utente potrà cliccare il bottone "more info". 
 
 
 <br> 
-<!-- SPAZIO DA METTERE + COLLEGARE IL LINK DELL'ACCOUNT GIT A CIASCUNO DI NOI (metti badges anche qua) --> 
 
 ## Partecipanti
 
