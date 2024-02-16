@@ -1,4 +1,17 @@
 const indiceRisposteArray = [];
+let ctxGrafico;
+let documentGrafico = document.getElementById('graficoCanvas');
+const myDataStorage = localStorage.getItem('myData');
+let myData = myDataStorage.split(',');
+
+const domandeIndexStorage = localStorage.getItem('domandeIndexArray');
+let domandeIndex = domandeIndexStorage.split(',');
+
+const risposteIndexStorage = localStorage.getItem('rispostaIndexArray');
+let risposteIndex = risposteIndexStorage.split(',');
+
+console.log(domandeIndexStorage)
+
 
 
 const questions = [
@@ -79,4 +92,65 @@ const questions = [
     },
   ];
 
- 
+  Chart.defaults.global.tooltips.enabled = false;
+
+  let chart = new Chart(documentGrafico, {
+      type: 'doughnut',
+      data: {
+          datasets: [{
+              data: myData,
+              backgroundColor: ['#d20094', '#00FFFF'],
+              borderWidth: 0,
+          }]
+      },
+      options: {
+          maintainAspectRatio: false,
+          hover: { mode: null },
+          animation: { duration: 2000, },
+          cutoutPercentage: 75,
+      },
+      tooltips: {
+          enabled: true, // Abilita i tooltip
+          callbacks: {
+              label: function (tooltipItem, data) {
+                  // Ottieni il valore del segmento attuale
+                  var value = data.datasets[0].data[tooltipItem.index];
+                  if (tooltipItem.index === 0) {
+                      return "Wrong " + value * 100 + '%';
+                  } else {
+                      return "Correct " + value * 100 + '%';
+                  }
+              }
+          }
+      }
+  });
+
+
+
+  function stampa() {
+
+  }
+
+  const verificaDomanda = (pulsanteCliccato) => {
+    let documentRisposte = Array.from(document.getElementsByClassName("btnAsk"));
+    for (let index = 0; index < documentRisposte.length; index++) {
+      const rispostaCorrente = documentRisposte[index].innerText;
+      if (documentRisposte[pulsanteCliccato - 1] !== undefined) {
+        const rispostaUtente = documentRisposte[pulsanteCliccato - 1].innerText;
+        if (rispostaUtente === rispostaCorrente) {
+          risposte.push(true);
+          break;
+        } else {
+          risposte.push(false);
+          break;
+        }
+      }
+    }
+  }
+
+  const init = () => {
+    ctxGrafico = documentGrafico.getContext('2d');
+
+  }
+
+  addEventListener('load', init)

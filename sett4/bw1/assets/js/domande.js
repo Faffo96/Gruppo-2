@@ -5,6 +5,7 @@ const documentRisposta1 = document.getElementById('risposta1');
 const documentRisposta2 = document.getElementById('risposta2');
 const documentRisposta3 = document.getElementById('risposta3');
 const documentRisposta4 = document.getElementById('risposta4');
+
 // variabili globali 
 let domandaCorrente = 0;
 let intervallo;
@@ -12,6 +13,12 @@ Chart.defaults.global.tooltips.enabled = false;
 let risposte = [];
 let domandeEstratte = []
 let risposteEstratte = []
+let domandeIndexArray = [];
+let risposteIndexArray = [];
+let domandaRandomIndex = 0;
+let rispostaCorrente;
+let documentRisposte;
+let documentRisposteArray;
 
 
 
@@ -117,7 +124,7 @@ const domandeRandom = (array, n) => {
   if (array.length === questions.length) {
     return;
   }
-  let domandaRandomIndex;
+  domandaRandomIndex = 0;
   do {
     domandaRandomIndex = Math.floor(Math.random() * n);
   } while (array.includes(domandaRandomIndex));
@@ -137,9 +144,10 @@ const visualizzaDati = () => {
   let risposteRandomArray = [];
   let documentRisposteArrayTesti = []
   risposteEstratte = [];
-  let domandaRandomIndex = domandeRandom(domandeEstratte, questions.length);
+  domandaRandomIndex = domandeRandom(domandeEstratte, questions.length);
 
 
+  
   testoDomanda.innerText = questions[domandaRandomIndex].question;
 
   documentRisposteArrayTesti.push(questions[domandaRandomIndex].correct_answer);
@@ -156,24 +164,24 @@ const visualizzaDati = () => {
     documentRisposta4.innerText = documentRisposteArrayTesti[domandeRandom(risposteEstratte, 4)]
   }
 
-  let documentRisposte = document.getElementsByClassName('btnAsk');
-  let documentRisposteArray = Array.from(documentRisposte);
+  documentRisposte = document.getElementsByClassName('btnAsk');
+  documentRisposteArray = Array.from(documentRisposte);
 
   documentRisposteArray.forEach(element => {
     element.style.display = 'inline';
     if (element.innerText === 'undefined') {
       element.style.display = 'none';
-    } console.log(element.innerText)
+    }
   });
 
   documentRisposteArrayTesti = [];
-  console.log(domandaCorrente)
+
   document.getElementById("mostraNDomande").innerText = "QUESTION " + (parseInt(domandaCorrente) + 1);
 }
 
 
 
-;
+  ;
 
 
 
@@ -210,8 +218,12 @@ const startTimer = (durataMillis) => {
 
 const verificaDomanda = (pulsanteCliccato) => {
   let documentRisposte = Array.from(document.getElementsByClassName("btnAsk"));
+  
   for (let index = 0; index < documentRisposte.length; index++) {
-    const rispostaCorrente = documentRisposte[index].innerText;
+    rispostaCorrente = documentRisposte[index].innerText;
+    console.log(rispostaCorrente)
+
+
     if (documentRisposte[pulsanteCliccato - 1] !== undefined) {
       const rispostaUtente = documentRisposte[pulsanteCliccato - 1].innerText;
       if (rispostaUtente === rispostaCorrente) {
@@ -260,6 +272,22 @@ function ablitaRisposte() {
   documentRisposta4.removeAttribute("disabled");
 }
 
+const trasferisciDati = (n) => {
+
+  documentRisposte = Array.from(document.getElementsByClassName("btnAsk"));
+
+  console.log(domandeIndexArray);
+  domandeIndexArray.push(domandaRandomIndex);
+
+    
+    risposteIndexArray.push(rispostaCorrente);
+
+
+  localStorage.setItem('domandeIndexArray', domandeIndexArray);
+  localStorage.setItem('risposteIndexArray', risposteIndexArray);
+
+}
+
 
 
 documentRisposta1.addEventListener("click", function () {
@@ -267,23 +295,27 @@ documentRisposta1.addEventListener("click", function () {
   verificaDomanda(1);
   domandaSuccessiva();
   ablitaRisposte();
+  trasferisciDati(1);
 });
 documentRisposta2.addEventListener("click", function () {
   disabilitaRisposte()
   verificaDomanda(2);
   domandaSuccessiva();
   ablitaRisposte();
+  trasferisciDati(2);
 });
 documentRisposta3.addEventListener("click", function () {
   disabilitaRisposte()
   verificaDomanda(3);
   domandaSuccessiva();
   ablitaRisposte();
+  trasferisciDati(3);
 });
 documentRisposta4.addEventListener("click", function () {
   disabilitaRisposte()
   verificaDomanda(4);
   domandaSuccessiva();
   ablitaRisposte();
+  trasferisciDati(4);
 });
 addEventListener("load", init);

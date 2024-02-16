@@ -73,6 +73,7 @@ function stampa() {
     chart.data.datasets[0].data = myData;
     chart.update();
 
+    localStorage.setItem('myData', myData);
 
     if(iPositivo >= 60){
         documentScrittaGrafico_h4.innerText = 'Congratulations!'
@@ -86,6 +87,8 @@ function stampa() {
     }
 }
 
+
+
 function init() {
     ctxGrafico = documentGrafico.getContext('2d');
     stampa();
@@ -97,3 +100,4 @@ documentBtn.addEventListener('click', function (e) {
     e.preventDefault;
     window.location.href = 'feedback.html'
 });
+
