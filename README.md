@@ -116,7 +116,7 @@ I risultati poi, vengono visualizzati nel grafico a ciambella tramite quattro pr
 
 - _**quarta pagina**_:
 
-L'utente dovrà lasciare una valutazione con le stelline e un commento; al completamento della valutazione l'utente potrà cliccare il bottone "more info" per confermarla. 
+L'utente dovrà lasciare una valutazione con le stelline e un commento; al completamento della valutazione l'utente potrà cliccare il bottone "more info". 
 
 
 <br> 
