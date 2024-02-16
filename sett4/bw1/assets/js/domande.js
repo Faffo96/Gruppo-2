@@ -10,6 +10,8 @@ let domandaCorrente = 0;
 let intervallo;
 Chart.defaults.global.tooltips.enabled = false;
 let risposte = [];
+let domandeEstratte = []
+let risposteEstratte = []
 
 
 
@@ -111,25 +113,67 @@ let chart = new Chart(documentCanvasClock, {
   }
 });
 
+const domandeRandom = (array, n) => {
+  if (array.length === questions.length) {
+    return;
+  }
+  let domandaRandomIndex;
+  do {
+    domandaRandomIndex = Math.floor(Math.random() * n);
+  } while (array.includes(domandaRandomIndex));
+
+  array.push(domandaRandomIndex);
+
+  return domandaRandomIndex;
+}
+/* return domandaRandomIndex; */
+
+
+
 
 
 const visualizzaDati = () => {
-  let domandaRandomIndex = Math.floor(Math.random() * questions.length);
-  testoDomanda.innerText = questions[domandaRandomIndex].question;
-  documentRisposta1.innerText = questions[domandaRandomIndex].correct_answer;
-  documentRisposta2.innerText = questions[domandaRandomIndex].incorrect_answers[0];
-  documentRisposta3.innerText = questions[domandaRandomIndex].incorrect_answers[1];
-  documentRisposta4.innerText = questions[domandaRandomIndex].incorrect_answers[2];
-  if (questions[domandaCorrente].incorrect_answers.length == 1) {
-    documentRisposta3.style.display = 'none';
-    documentRisposta4.style.display = 'none';
-  } else {
-    documentRisposta3.style.display = 'inline';
-    documentRisposta4.style.display = 'inline';
-  }
-  document.getElementById("mostraNDomande").innerText = "QUESTION " + (parseInt(domandaCorrente) + 1);
+  let rispostaRandomIndex = 0;
+  let risposteRandomArray = [];
+  let documentRisposteArrayTesti = []
+  risposteEstratte = [];
+  let domandaRandomIndex = domandeRandom(domandeEstratte, questions.length);
 
-};
+
+  testoDomanda.innerText = questions[domandaRandomIndex].question;
+
+  documentRisposteArrayTesti.push(questions[domandaRandomIndex].correct_answer);
+  documentRisposteArrayTesti.push(questions[domandaRandomIndex].incorrect_answers[0]);
+  documentRisposteArrayTesti.push(questions[domandaRandomIndex].incorrect_answers[1]);
+  documentRisposteArrayTesti.push(questions[domandaRandomIndex].incorrect_answers[2]);
+
+
+
+  documentRisposta1.innerText = documentRisposteArrayTesti[domandeRandom(risposteEstratte, 4)]
+  documentRisposta2.innerText = documentRisposteArrayTesti[domandeRandom(risposteEstratte, 4)]
+  if (documentRisposteArrayTesti.length > 2) {
+    documentRisposta3.innerText = documentRisposteArrayTesti[domandeRandom(risposteEstratte, 4)]
+    documentRisposta4.innerText = documentRisposteArrayTesti[domandeRandom(risposteEstratte, 4)]
+  }
+
+  let documentRisposte = document.getElementsByClassName('btnAsk');
+  let documentRisposteArray = Array.from(documentRisposte);
+
+  documentRisposteArray.forEach(element => {
+    element.style.display = 'inline';
+    if (element.innerText === 'undefined') {
+      element.style.display = 'none';
+    } console.log(element.innerText)
+  });
+
+  documentRisposteArrayTesti = [];
+  console.log(domandaCorrente)
+  document.getElementById("mostraNDomande").innerText = "QUESTION " + (parseInt(domandaCorrente) + 1);
+}
+
+
+
+;
 
 
 
@@ -184,7 +228,7 @@ const verificaDomanda = (pulsanteCliccato) => {
 
 const domandaSuccessiva = () => {
   localStorage.setItem('risposte', risposte);
-  console.log(risposte);
+
   clearInterval(intervallo);
   domandaCorrente++;
   if (domandaCorrente > questions.length - 1) {
@@ -243,5 +287,3 @@ documentRisposta4.addEventListener("click", function () {
   ablitaRisposte();
 });
 addEventListener("load", init);
-
-

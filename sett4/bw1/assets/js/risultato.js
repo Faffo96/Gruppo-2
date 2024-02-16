@@ -30,6 +30,20 @@ let chart = new Chart(documentGrafico, {
         hover: { mode: null },
         animation: { duration: 2000, },
         cutoutPercentage: 75,
+    },
+    tooltips: {
+        enabled: true, // Abilita i tooltip
+        callbacks: {
+            label: function (tooltipItem, data) {
+                // Ottieni il valore del segmento attuale
+                var value = data.datasets[0].data[tooltipItem.index];
+                if (tooltipItem.index === 0) {
+                    return "Wrong " + value * 100 + '%';
+                } else {
+                    return "Correct " + value * 100 + '%';
+                }
+            }
+        }
     }
 });
 
