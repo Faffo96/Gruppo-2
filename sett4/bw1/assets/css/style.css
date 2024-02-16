@@ -126,9 +126,6 @@ main {
     width: 100%;
 }
 
-/* RISULTATO */
-
-
 /* RISULTATO MAIN */
 
 .risultato_header {
@@ -207,16 +204,16 @@ main {
     font-weight: bold;
 }
 
-#scritteGrafico > * {
- font-size: 1rem;
- margin: 0;
+#scritteGrafico>* {
+    font-size: 1rem;
+    margin: 0;
 }
 
 #scritteGrafico {
     position: relative;
     top: -226px;
     margin: 0 auto;
-    
+
 }
 
 #scritteGrafico h4:nth-child(2) {
@@ -231,7 +228,7 @@ main {
 }
 
 .risultato_footer input {
-cursor: pointer;
+    cursor: pointer;
 }
 
 
@@ -269,7 +266,7 @@ cursor: pointer;
 }
 
 .div4Ask {
-    
+
     width: 100px;
     margin: 0 auto;
     margin-top: 100px;
@@ -285,25 +282,20 @@ cursor: pointer;
     height: 150px;
     border: 1px solid;
     position: relative;
-    /* border: 1px solid green; */
 }
 
 #clock div {
     position: absolute;
     transform: translate(500px, 50px);
-    /* border: 1px solid orange; */
-
 }
 
 #clockDiv {
     width: 150px;
     height: 150px;
-    display: inline-block;
-    /* border: 1px solid red; */
+    display: inline-block
 }
 
 #scritteTimer {
-    /* border: 1px solid blue; */
     text-align: center;
     display: inline-block;
     position: relative;
@@ -316,37 +308,20 @@ cursor: pointer;
 #scritteTimer p {
     line-height: 1;
     font-size: 0.5rem;
-    /* border: 1px solid red; */
+
     margin: 0;
 }
-
-/* @keyframes shine {
-    0% {
-        filter: brightness(1);
-    }
-
-    50% {
-        filter: brightness(1.5);
-    }
-
-    100% {
-        filter: brightness(1);
-    }
-} */
 
 
 #scritteTimer #documentSecondi {
     font-size: 2.5rem;
-    /* border: 1px solid orange; */
-    animation: shine 2s forwards;
 
-    /* filter: brightness(200%);
-    color: blueviolet; */
+    animation: shine 2s forwards;
 
 }
 
 #containerClock {
-    /* border: 1px solid black; */
+
     width: 250px;
     vertical-align: middle;
     position: absolute;
@@ -388,9 +363,6 @@ section {
     margin-top: 30px;
 }
 
-.stelle img:hover {
-    
-}
 
 /* INPUT */
 
@@ -414,4 +386,14 @@ section {
 
 footer {
     width: 50%;
+}
+
+.testoRingraziamento {
+    text-align: center;
+    color: #00ffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1050px;
 }
