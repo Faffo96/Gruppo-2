@@ -16,17 +16,15 @@ Ci siamo focalizzati su due principali fini :
 1. _La creazione del layout con HTML e CSS con classi pre-organizzate_
 2. _La gestione dei vari collegamenti delle pagine e funzionalità tramite Javascript usando le idee progettate all'inizio_
 
+<br>
 
-<!-- demo delle slide --> 
-
-<!-- inserire link ai vari argomenti in modo da poter andare direttamente all'argomento scelto e magari suddividere meglio il tutto --> 
 ## Table of Contents 
 - [Come funziona](#come-funziona)
 - [Partecipanti](#partecipanti)
-<!-- SPAZIO DA METTERE --> 
 
 
 <br> 
+
 
 ## Com'è strutturato
 
@@ -47,6 +45,7 @@ il nostro progetto è suddiviso in:
 ![Domande-](https://github.com/Elekekic/EPICODE-REPO/assets/157897660/8c6db3b3-0155-42e8-aef1-339e4d0e7bf1)
 <div align="center"> Seconda pagina, dove ci saranno una serie di domande e risposte con un timer in alto a destra. Alla sua scadenza le domande comunque proseguiranno </div>
 
+
  <br> 
 
  
@@ -54,6 +53,7 @@ il nostro progetto è suddiviso in:
 
 ![resultts](https://github.com/Elekekic/EPICODE-REPO/assets/157897660/8afef1db-0d65-42f2-9403-81fbf85a229f)
 <div align="center">  Terza pagine dove verranno visualizzati i dati raccolti dalle risposte in percentuale, con anche il numero di risposte corrette e sbagliati sottostanti, per proseguire bisogna cliccare il button "rate us" </div>
+
 
  <br>
 
@@ -65,6 +65,7 @@ il nostro progetto è suddiviso in:
 
 
  <br> 
+
   
  ![Static Badge](https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=javascript)
 
@@ -73,31 +74,52 @@ il nostro progetto è suddiviso in:
 - Results page
 - Feedback page
 
+
   <br>
 
   
  > ![Static Badge](https://img.shields.io/badge/CSS-black?style=for-the-badge&logo=CSS3)
 - Stylesheet unico
 
+
 <br>
-<!-- SPAZIO DA METTERE --> 
-
-
-  <br>
 
   
 ## Come funziona 
 in pratica spiegare il js delle varie pagine 
 
-- prima pagina : abbiamo usato una funzione per far si che se la checkbox e stata checkata, quando anche il button verrà cliccato, ci poterà direttamente alla prossima pagina.
-  altrimenti metterà un messaggio sotto la checkbox per indicare all'user si eseguire prima quel step per riuscire a proseguire. 
-- seconda pagina : 
-- terza pagina :
-- quarta pagina :
-- extra quinta pagina : (?) 
+- _**prima pagina**_:
+  
+La logica di questa pagina si basa sul click del button e della checkbox. 
+Se la checkbox è stata cliccata, quando anche il button verrà cliccato ci porterà direttamente alla prossima pagina,
+altrimenti comparirà un messaggio sotto la checkbox per indicare all'utente di eseguire prima quel step per riuscire a proseguire. 
+
+<br>
+
+- _**seconda pagina**_:
+  
+Qua invece la logica è un po' più complessa:
+Questa pagina propone all'utente una serie di domande random avendo 2 o 4 risposte altretanto random. Ogni domanda ha un timer di 30 secondi con un grafico animato. 
+Allo scadere del timer passa automaticamente alla prossima domanda. 
+
+<br>
+
+- _**terza pagina**_:
+
+La logica qui fa si che ci porti i dati raccolti nella pagina prima in forma di grafico a ciambella. 
+I risultati poi, vengono visualizzati nel grafico a ciambella tramite quattro principali modalità: 
+1. Il grafico viene implementato grazie alla libreria di chart.js. 
+2. Ai lati del grafico vengono inseriti i dati in percentuale.
+3. Al click del bottone "rate us" ci porterà alla prossima pagina. 
+
+<br>
+
+- _**quarta pagina**_:
+
+L'utente dovrà lasciare una valutazione con le stelline e un commento; al completamento della valutazione l'utente potrà cliccare il bottone "more info". 
+
 
 <br> 
-<!-- SPAZIO DA METTERE + COLLEGARE IL LINK DELL'ACCOUNT GIT A CIASCUNO DI NOI (metti badges anche qua) --> 
 
 ## Partecipanti
 

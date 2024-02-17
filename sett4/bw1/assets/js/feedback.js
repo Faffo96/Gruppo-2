@@ -1,94 +1,78 @@
-const stelle = document.querySelectorAll('#stelle img');
-const stelleArray = Array.from(stelle);
-const documentFeedbackUtente = document.getElementById('commentoUtente');
-const documentBtnFeedback = document.getElementById('btnFeedback');
+// Seleziona gli elementi dal DOM
+const stelle = document.querySelectorAll('#stelle img'); // Selezione di tutte le immagini con id 'stelle'
+const stelleArray = Array.from(stelle); // Creazione di un array da NodeList
+const documentFeedbackUtente = document.getElementById('commentoUtente'); // Selezione dell'elemento con id 'commentoUtente'
+const documentBtnFeedback = document.getElementById('btnFeedback'); // Selezione del pulsante con id 'btnFeedback'
 
+// Inizializza la variabile per tenere traccia delle stelle attive
 let stelleAttive = 0;
 
+// Funzione per gestire l'effetto hover sulle stelle
 const gestisciHover = (indice) => {
     for (let j = 0; j <= indice; j++) {
-        stelleArray[j].setAttribute('src', 'assets/img/star.svg');
+        stelleArray[j].setAttribute('src', 'assets/img/star.svg'); // Imposta l'immagine della stella attiva
     }
 };
 
+// Funzione per gestire l'effetto mouseout sulle stelle
 const gestisciUscita = (indice) => {
     if (stelleAttive <= indice) {
         for (let j = 0; j <= indice; j++) {
-            stelleArray[j].setAttribute('src', 'assets/img/star2.svg');
+            stelleArray[j].setAttribute('src', 'assets/img/star2.svg'); // Ripristina l'immagine della stella inattiva
         }
     }
 };
 
-/* const verificaForm = () => {
-    var valoreInput = document.getElementById("documentFeedbackUtente").value;
-
-    if (stelleAttive > 0 && valoreInput.trim() !== '') {
-        documentBtnFeedback.disabled = true;
-        window.location.href = 'index.html';
-    } else {
-        documentBtnFeedback.disabled = false;
-    }
-} */
-
+// Funzione per gestire il click su una stella
 const gestisciClick = (indice) => {
     stelleArray.forEach(element => {
-        element.setAttribute('src', 'assets/img/star2.svg');
+        element.setAttribute('src', 'assets/img/star2.svg'); // Ripristina tutte le stelle come inattive
     });
 
-    stelleAttive = indice + 1;
+    stelleAttive = indice + 1; // Imposta il numero di stelle attive
     for (let j = 0; j <= indice; j++) {
-        stelleArray[j].setAttribute('src', 'assets/img/star.svg');
+        stelleArray[j].setAttribute('src', 'assets/img/star.svg'); // Imposta l'immagine della stella attiva
     }
 
-    verificaForm();
+    verificaForm(); // Chiama la funzione per verificare il form
 };
 
+// Aggiungi gli event listener alle stelle
 stelleArray.forEach((stella, i) => {
-    stella.addEventListener("mouseover", () => gestisciHover(i));
-    stella.addEventListener("mouseout", () => gestisciUscita(i));
-    stella.addEventListener("click", () => gestisciClick(i));
-
+    stella.addEventListener("mouseover", () => gestisciHover(i)); // Aggiungi evento hover
+    stella.addEventListener("mouseout", () => gestisciUscita(i)); // Aggiungi evento mouseout
+    stella.addEventListener("click", () => gestisciClick(i)); // Aggiungi evento click
 });
 
-documentFeedbackUtente.addEventListener("input", function() {
-    verificaForm();
+// Aggiungi l'event listener per l'input nel campo di testo
+documentFeedbackUtente.addEventListener("input", function () {
+    verificaForm(); // Chiama la funzione per verificare il form
 });
 
-
-
-
-
-/* const accendiStelle = (index) => {
-    console.log(index)
-} */
-
-
-
-/* console.log(stelleArray)
-stella.setAttribute('src', 'assets/img/star2.svg');
-
-stella.addEventListener("mouseover", function () {
-    stella.setAttribute('src', 'assets/img/star.svg')
-})
-
-stella.addEventListener("mouseout", function () {
-    stella.setAttribute('src', 'assets/img/star2.svg')
-})
- */
-
-
-
-/* elencoTask.forEach((element, index) => {
-    //task eseguito: font barrato
-    if (elencoTaskEseguiti[index]) {
-        lista.innerHTML += <div>
-            <li class="testo-barrato" onclick="barraTask(${index});" >${element}</li>
-            <p><i onclick="eliminaTask(${index});" class="fa-solid fa-trash-can"></i></p>
-        </div>;
+// Definisci la funzione del pulsante
+function button() {
+    if (stelleAttive === 0 || documentFeedbackUtente.value.trim() === '') {    //GRAZIE A SANTA ROSA ABBIAMO TROVATO IL METODO TRIM ED ORA IL MONDO E' UN POSTO MIGLIORE :D <3
+        alert('Write comment and rate us!'); // Mostra un avviso se il form non è completo
     } else {
-        lista.innerHTML += <div>
-            <li class="testo-normale" onclick="barraTask(${index});" >${element}</li>
-            <p><i onclick="eliminaTask(${index});" class="fa-solid fa-trash-can"></i></p>
-        </div>;
+        textRingraziamento(); // Chiama la funzione per mostrare il ringraziamento
     }
-}); */
+}
+
+documentBtnFeedback.addEventListener('click', button); // Aggiungi evento click al pulsante
+
+// Definisci la funzione di ringraziamento
+function textRingraziamento() {
+    // Rimuovi tutti gli elementi tranne il logo
+    const eliminaElementi = document.querySelectorAll('#mainFeedback, footer');
+    eliminaElementi.forEach(element => {
+        element.remove();
+    });
+
+    // Crea e aggiungi la scritta al centro della pagina
+    const ringraziamento = document.createElement('div');
+    const testo = document.createElement('h1');
+    ringraziamento.classList.add('testoRingraziamento');
+    testo.innerText = 'Thank you, your feedback has been recorded!';
+    ringraziamento.appendChild(testo);
+    document.body.appendChild(ringraziamento);
+}

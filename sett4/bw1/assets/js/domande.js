@@ -1,10 +1,11 @@
-
+//costanti html
 const documentCanvasClock = document.getElementById('canvasClock');
 const testoDomanda = document.getElementById('documentDomanda');
 const documentRisposta1 = document.getElementById('risposta1');
 const documentRisposta2 = document.getElementById('risposta2');
 const documentRisposta3 = document.getElementById('risposta3');
 const documentRisposta4 = document.getElementById('risposta4');
+
 // variabili globali 
 let domandaCorrente = 0;
 let intervallo;
@@ -14,7 +15,7 @@ let domandeEstratte = []
 let risposteEstratte = []
 
 
-
+//array database
 const questions = [
   {
     question: "What does CPU stand for?",
@@ -93,9 +94,12 @@ const questions = [
   },
 ];
 
-let ctxClock = documentCanvasClock.getContext('2d');
 
+// ottiene il contesto del timer
+let ctxClock = documentCanvasClock.getContext('2d');
+// array per chart.js; i valori possono andare da 0 a 1: 0 e' completamente sbagliato, 1 completamente giusto.
 let myData = [0, 1];
+
 let chart = new Chart(documentCanvasClock, {
   type: 'doughnut',
   data: {
@@ -113,6 +117,9 @@ let chart = new Chart(documentCanvasClock, {
   }
 });
 
+// il parametro array memorizza le domande gia' estratte
+// restituisce in modo casuale il numero di domande che va da 0 a n-1
+// il parametro n e' il limite massimo (escluso) da estrarre
 const domandeRandom = (array, n) => {
   if (array.length === questions.length) {
     return;
@@ -126,29 +133,20 @@ const domandeRandom = (array, n) => {
 
   return domandaRandomIndex;
 }
-/* return domandaRandomIndex; */
 
 
-
-
-
+// funzione che mostra la domanda e le corrispettive risposte in maniera random
 const visualizzaDati = () => {
   let rispostaRandomIndex = 0;
   let risposteRandomArray = [];
   let documentRisposteArrayTesti = []
   risposteEstratte = [];
   let domandaRandomIndex = domandeRandom(domandeEstratte, questions.length);
-
-
   testoDomanda.innerText = questions[domandaRandomIndex].question;
-
   documentRisposteArrayTesti.push(questions[domandaRandomIndex].correct_answer);
   documentRisposteArrayTesti.push(questions[domandaRandomIndex].incorrect_answers[0]);
   documentRisposteArrayTesti.push(questions[domandaRandomIndex].incorrect_answers[1]);
   documentRisposteArrayTesti.push(questions[domandaRandomIndex].incorrect_answers[2]);
-
-
-
   documentRisposta1.innerText = documentRisposteArrayTesti[domandeRandom(risposteEstratte, 4)]
   documentRisposta2.innerText = documentRisposteArrayTesti[domandeRandom(risposteEstratte, 4)]
   if (documentRisposteArrayTesti.length > 2) {
@@ -166,24 +164,19 @@ const visualizzaDati = () => {
     } console.log(element.innerText)
   });
 
+
   documentRisposteArrayTesti = [];
   console.log(domandaCorrente)
   document.getElementById("mostraNDomande").innerText = "QUESTION " + (parseInt(domandaCorrente) + 1);
 }
 
 
-
-;
-
-
-
+//visualizza il grafico timer e lo aggiorna 10 volte al secondo
 const startTimer = (durataMillis) => {
   let index1 = 0;
   let index2 = 1;
   let milliSecondi = 0;
   const documentSecondi = document.getElementById("documentSecondi");
-
-
   intervallo = setInterval(function () {
 
     index1 += 1 / durataMillis * 100;
@@ -208,6 +201,7 @@ const startTimer = (durataMillis) => {
 
 };
 
+//verifica della risposta dell'utente tenendo conto il caso in cui le risposte possano essere 2 o 4
 const verificaDomanda = (pulsanteCliccato) => {
   let documentRisposte = Array.from(document.getElementsByClassName("btnAsk"));
   for (let index = 0; index < documentRisposte.length; index++) {
@@ -225,9 +219,10 @@ const verificaDomanda = (pulsanteCliccato) => {
   }
 }
 
-
+// al click dell'utente il timer si ferma, si passa alla domanda successiva e il timer ricomincia
+// se la domanda e' l'ultima porta alla pagina del risultato
 const domandaSuccessiva = () => {
-  localStorage.setItem('risposte', risposte);
+  localStorage.setItem('risposte', risposte); //salva le risposte per la pagina del risultato
 
   clearInterval(intervallo);
   domandaCorrente++;
@@ -238,14 +233,14 @@ const domandaSuccessiva = () => {
   startTimer(30000);
 };
 
+//visualizza i dati e fa partire il timer al primo caricamento della pagina
 function init() {
   visualizzaDati();
-
-
   startTimer(30000);
 
 }
 
+//rende non cliccabili i pulsanti dell'html
 function disabilitaRisposte() {
   documentRisposta1.setAttribute("disabled", "");
   documentRisposta2.setAttribute("disabled", "");
@@ -253,6 +248,7 @@ function disabilitaRisposte() {
   documentRisposta4.setAttribute("disabled", "");
 }
 
+//rende cliccabili i pulsanti dell'html
 function ablitaRisposte() {
   documentRisposta1.removeAttribute("disabled");
   documentRisposta2.removeAttribute("disabled");
@@ -261,7 +257,7 @@ function ablitaRisposte() {
 }
 
 
-
+//intercetta il click dei corrispettivi pulsanti 
 documentRisposta1.addEventListener("click", function () {
   disabilitaRisposte()
   verificaDomanda(1);
@@ -286,4 +282,6 @@ documentRisposta4.addEventListener("click", function () {
   domandaSuccessiva();
   ablitaRisposte();
 });
+
+//richiama init con l'evento load 
 addEventListener("load", init);
