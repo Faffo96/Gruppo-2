@@ -2,7 +2,8 @@
 
 /* GENERAL */
 body {
-    margin: 0;
+    width: 2000px;
+    margin: 0 auto;
     padding: 0;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
@@ -103,7 +104,8 @@ main {
 }
 
 #btnPro,
-#btnFeedback {
+#btnFeedback,
+#rateUs {
     width: 100px;
     background-color: #00ffff;
     display: inline-block;
@@ -115,6 +117,10 @@ main {
     border: none;
     font-size: 1.1em;
     cursor: pointer;
+}
+
+#rateUs {
+    text-align: center;
 }
 
 #required {
@@ -396,4 +402,49 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1050px;
+}
+
+/* PAGINA EXTRA */ 
+
+#graficoRisultatoDomande {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.contenitoreRisposta {
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 50px auto;
+    background-color: rgba(199, 199, 199, 0.046);
+    box-shadow: 5px 5px 27px 4px rgba(132, 132, 132, 0.399);
+}
+
+.contenitoreRisposta div {
+    display: block;
+    margin: 30px;
+
+}
+
+ .contenitoreRisposta div p {
+    display: inline;
+    padding-right: 10px;
+}
+
+.contenitoreRisposta_3 {
+    font-weight:  bold;
+}
+
+.contenitoreRisposta_5 {
+    color: rgb(27, 211, 27);
+}
+
+#contenitore_button {
+    width: 200px;
+    margin: 0 auto;
+}
+
+#rateUs {
+    margin: 0;
 }

@@ -34,21 +34,21 @@ let chart = new Chart(documentGrafico, {
         hover: { mode: null },
         animation: { duration: 2000, },
         cutoutPercentage: 75,
-    },
-    tooltips: {
-        enabled: true, // Abilita i tooltip
-        callbacks: {
-            label: function (tooltipItem, data) {
-                // Ottieni il valore del segmento attuale
-                var value = data.datasets[0].data[tooltipItem.index];
-                if (tooltipItem.index === 0) {
-                    return "Wrong " + value * 100 + '%';
-                } else {
-                    return "Correct " + value * 100 + '%';
+        tooltips: {
+            enabled: true, // Abilita i tooltip
+            callbacks: {
+                label: function (tooltipItem, data) {
+                    // Ottieni il valore del segmento attuale
+                    var value = data.datasets[0].data[tooltipItem.index];
+                    if (tooltipItem.index === 0) {
+                        return "Wrong " + value * 100 + '%';
+                    } else {
+                        return "Correct " + value * 100 + '%';
+                    }
                 }
             }
         }
-    }
+    },
 });
 
 
@@ -63,7 +63,7 @@ function stampa() {
             documentRisultatoPositivo.innerText = `0/10 questions`
         }
 
-        if (risposta == 'true') {
+        if (risposta === 'true') {
             iPositivo++;
         } else {
             iNegativo++;
@@ -85,6 +85,45 @@ function stampa() {
         documentScrittaGrafico_h4.innerText = 'Congratulations!'
         documentScrittaGrafico_span.innerText = 'You passed the exam'
         documentScrittaGrafico_p.innerText = `We'll send you the certificare in few minutes. Check your email (including promotions / spam folder)`
+        const count = 600,
+        defaults = {
+          origin: { y: 0.7 },
+        };
+      
+      function fire(particleRatio, opts) {
+        confetti(
+          Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio),
+          })
+        );
+      }
+      
+      fire(0.25, {
+        spread: 26,
+        startVelocity: 55,
+      });
+      
+      fire(0.2, {
+        spread: 60,
+      });
+      
+      fire(0.35, {
+        spread: 100,
+        decay: 0.91,
+        scalar: 0.8,
+      });
+      
+      fire(0.1, {
+        spread: 120,
+        startVelocity: 25,
+        decay: 0.92,
+        scalar: 1.2,
+      });
+      
+      fire(0.1, {
+        spread: 120,
+        startVelocity: 45,
+      });
     } else {
         documentScrittaGrafico_h4.innerText = 'Oh sorry!'
         documentScrittaGrafico_span.innerText = 'You failed the exam'
@@ -105,5 +144,5 @@ addEventListener('load', init);
 //cambio pagina al click dell'utente che porta alla pagina feedback
 documentBtn.addEventListener('click', function (e) {
     e.preventDefault;
-    window.location.href = 'feedback.html'
+    window.location.href = 'risultatoDomande.html';
 });
