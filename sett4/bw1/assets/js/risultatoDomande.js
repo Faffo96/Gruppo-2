@@ -216,4 +216,9 @@ const init = () => {
 
 }
 
+rateUs.addEventListener("click", function(e){
+  e.preventDefault;
+    window.location.href = 'feedback.html';
+})
+
 addEventListener('load', init); 
