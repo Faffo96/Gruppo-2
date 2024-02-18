@@ -104,7 +104,8 @@ main {
 }
 
 #btnPro,
-#btnFeedback {
+#btnFeedback,
+#rateUs {
     width: 100px;
     background-color: #00ffff;
     display: inline-block;
@@ -116,6 +117,10 @@ main {
     border: none;
     font-size: 1.1em;
     cursor: pointer;
+}
+
+#rateUs {
+    text-align: center;
 }
 
 #required {
@@ -435,3 +440,11 @@ footer {
     color: rgb(27, 211, 27);
 }
 
+#contenitore_button {
+    width: 200px;
+    margin: 0 auto;
+}
+
+#rateUs {
+    margin: 0;
+}
