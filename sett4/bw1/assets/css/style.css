@@ -2,7 +2,8 @@
 
 /* GENERAL */
 body {
-    margin: 0;
+    width: 2000px;
+    margin: 0 auto;
     padding: 0;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
@@ -126,8 +127,6 @@ main {
     width: 100%;
 }
 
-/* RISULTATO */
-
 /* RISULTATO MAIN */
 
 .risultato_header {
@@ -144,20 +143,27 @@ main {
     margin: 0;
 }
 
+#correct {
+    text-align: left;
+}
+
+#wrong {
+    text-align: right;
+}
+
 #correct,
 #wrong {
     width: 220px;
     height: 150px;
     display: inline-block;
-    border: 1px solid;
     line-height: 1.1;
+    font-family: 'Outfit', sans-serif;
 }
 
 #grafico {
     width: 300px;
     height: 300px;
     display: inline-block;
-    border: 2px solid green;
     margin: 0 71px;
 }
 
@@ -199,13 +205,39 @@ main {
     font-weight: bold;
 }
 
+#scritteGrafico>* {
+    font-size: 1rem;
+    margin: 0;
+}
+
+#scritteGrafico {
+    position: relative;
+    top: -226px;
+    margin: 0 auto;
+
+}
+
+#scritteGrafico h4:nth-child(2) {
+    color: #00ffff;
+    margin-bottom: 20px;
+}
+
+#scritteGrafico p {
+    font-size: 0.7rem;
+    width: 145px;
+    margin: 0 auto;
+}
+
+.risultato_footer input {
+    cursor: pointer;
+}
+
+
 /* DOMANDE */
 
 .div2Ask {
-    width: 100%;
+    width: 1000px;
     margin-top: 100px;
-   
-    
 }
 
 .div2Ask h1 {
@@ -227,14 +259,18 @@ main {
     font-size: 1em;
     margin-bottom: 20px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.btnAsk:active {
+    background-color: #d20094;
 }
 
 .div4Ask {
-    margin-top: 100px;
-    position: absolute;
-top: 570px;
-left: 695px;
 
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 100px;
 }
 
 .div4Ask h4 {
@@ -247,25 +283,20 @@ left: 695px;
     height: 150px;
     border: 1px solid;
     position: relative;
-    /* border: 1px solid green; */
 }
 
 #clock div {
     position: absolute;
     transform: translate(500px, 50px);
-    /* border: 1px solid orange; */
-
 }
 
 #clockDiv {
     width: 150px;
     height: 150px;
-    display: inline-block;
-    /* border: 1px solid red; */
+    display: inline-block
 }
 
 #scritteTimer {
-    /* border: 1px solid blue; */
     text-align: center;
     display: inline-block;
     position: relative;
@@ -278,42 +309,25 @@ left: 695px;
 #scritteTimer p {
     line-height: 1;
     font-size: 0.5rem;
-    /* border: 1px solid red; */
+
     margin: 0;
 }
-
-/* @keyframes shine {
-    0% {
-        filter: brightness(1);
-    }
-
-    50% {
-        filter: brightness(1.5);
-    }
-
-    100% {
-        filter: brightness(1);
-    }
-} */
 
 
 #scritteTimer #documentSecondi {
     font-size: 2.5rem;
-    /* border: 1px solid orange; */
-    animation: shine 2s forwards;
 
-    /* filter: brightness(200%);
-    color: blueviolet; */
+    animation: shine 2s forwards;
 
 }
 
 #containerClock {
-    /* border: 1px solid black; */
+
     width: 250px;
     vertical-align: middle;
     position: absolute;
     top: 40px;
-    left: 1040px;
+    left: 62%
 }
 
 
@@ -350,6 +364,7 @@ section {
     margin-top: 30px;
 }
 
+
 /* INPUT */
 
 #commentoUtente {
@@ -373,3 +388,50 @@ section {
 footer {
     width: 50%;
 }
+
+.testoRingraziamento {
+    text-align: center;
+    color: #00ffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1050px;
+}
+
+/* PAGINA EXTRA */ 
+
+#graficoRisultatoDomande {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.contenitoreRisposta {
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 50px auto;
+    background-color: rgba(199, 199, 199, 0.046);
+    box-shadow: 5px 5px 27px 4px rgba(132, 132, 132, 0.399);
+}
+
+.contenitoreRisposta div {
+    display: block;
+    margin: 30px;
+
+}
+
+ .contenitoreRisposta div p {
+    display: inline;
+    padding-right: 10px;
+}
+
+.contenitoreRisposta_3 {
+    font-weight:  bold;
+}
+
+.contenitoreRisposta_5 {
+    color: rgb(27, 211, 27);
+}
+

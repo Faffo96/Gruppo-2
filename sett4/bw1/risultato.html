@@ -26,14 +26,23 @@
 
             <div class="risultato_main">
                 <div id="correct">
-                    <h3>Correct <span>66.7%</span></h3>
-                    <p>4/10 questions</p>
+                    <h3>Correct <span id="giuste">66.7%</span></h3>
+                    <p></p>
                 </div>
                 <div id="grafico">
+                    <div id="graficoDiv">
+                        <canvas id="graficoCanvas"> </canvas>
+                    </div>
+                    <div id="scritteGrafico">
+                        <h4></h4>
+                        <h4 id="scritteGrafico_span"></h4>
+                        
+                        <p></p>
+                    </div>
                 </div>
                 <div id="wrong">
-                    <h3>Wrong <span>33.7%</span></h3>
-                    <p>4/10 questions</p>
+                    <h3>Wrong <span id="sbagliate">33.7%</span></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="risultato_footer">
@@ -41,8 +50,9 @@
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
     <script src="assets/js/risultato.js"></script>
-    <script src="assets/js/domande.js"></script>
 </body>
 
 </html>
