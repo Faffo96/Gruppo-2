@@ -2,7 +2,8 @@
 
 /* GENERAL */
 body {
-    margin: 0;
+    width: 2000px;
+    margin: 0 auto;
     padding: 0;
     font-family: 'Inter', sans-serif;
     font-size: 16px;

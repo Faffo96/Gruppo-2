@@ -189,8 +189,10 @@ const lala = () => {
       newP5.innerText = questions[index].correct_answer
       newP2.innerText = "❌"
       newDiv2.appendChild(newP5);
+      newP4.style.color = "red"; 
     } else {
       newP2.innerText = "✅"
+      newP4.style.color = "rgb(27, 211, 27)"; 
     }
 
 
