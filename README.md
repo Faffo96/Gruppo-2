@@ -66,6 +66,15 @@ il nostro progetto è suddiviso in:
 
  <br> 
 
+
+ - Pagina Extra
+
+![pagina-extra-Realizzato-con-Clipchamp](https://github.com/Faffo96/gruppo-2/assets/157897660/c5b667ca-fc86-4518-9f5f-e7dcb2b2a173)
+<div align="center">  Quinta pagina, uan pagina extra per mostrare le risposte esatte ed errate </div>
+
+
+ <br> 
+
   
  ![Static Badge](https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=javascript)
 
@@ -73,6 +82,7 @@ il nostro progetto è suddiviso in:
 - Question page
 - Results page
 - Feedback page
+- Extra page
 
 
   <br>
