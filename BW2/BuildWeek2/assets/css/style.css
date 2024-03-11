@@ -1,0 +1,295 @@
+/* GENERAL */
+.text-size-2 {
+  font-size: 0.8rem !important;
+}
+
+.text-size-1 {
+  font-size: 0.6rem;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
+.my-align-items-center {
+  align-items: center !important;
+}
+
+.icon-size-bigger {
+  font-size: 25px !important; /* Adjust the width as per your requirement */
+}
+
+.lala { /* >:) */
+  height: 2000px;
+}
+
+.height-80vh {
+  height: 80vh !important;
+}
+
+/* SEARCH-BAR MY LIBRARY */
+
+.containerSearch {
+    position: relative;
+    --size-button: 40px;
+    color: white;
+    display: flex; /* Aggiunto per allineare la barra di ricerca e l'icona */
+}
+
+.input {
+    padding-left: var(--size-button);
+    height: var(--size-button);
+    font-size: 15px;
+    border: none;
+    color: #fff;
+    outline: none;
+    width: var(--size-button);
+    transition: all ease 0.3s;
+    background-color: #191A1E;
+    box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+    cursor: pointer;
+}
+
+.input:focus,
+.input:not(:invalid) {
+    width: 200px;
+    cursor: text;
+    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+    background-color: #6C757D !important;
+    filter: brightness(125%);
+}
+
+.input:focus + .icon,
+.input:not(:invalid) + .icon {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.containerSearch .icon {
+    position: absolute;
+    width: var(--size-button);
+    height: var(--size-button);
+    top: -2px;
+    left: -2px;
+    padding: 8px;
+    pointer-events: none;
+}
+
+.containerSearch .icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.input::placeholder {
+    color: white
+  }
+
+/*ARTIST CARD AND SCROLL-BAR  */
+
+.cardArtist img {
+    width: 50px;
+}
+
+
+
+.artist {
+    max-height: 450px;
+
+    overflow-y: scroll;
+}
+
+.artist::-webkit-scrollbar {
+    width: 9px; /* Regola la larghezza della scrollbar */
+
+  }
+  
+  .artist::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.507); /* Colore della barra interna */
+   
+  }
+  
+  .artist::-webkit-scrollbar-track {
+    background-color: transparent; /* Sfondo trasparente */
+  }
+  
+  .artist::-webkit-scrollbar-thumb:hover {
+    background-color:rgba(255, 255, 255, 0.808); /* Colore della barra interna al passaggio del mouse (opzionale) */
+  }
+
+  /* PLAYER */
+.player img{
+width: 60px;
+}
+
+.song-time {
+    width: 100%;
+    margin-inline: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+  }
+  
+  .time {
+    width: 70%;
+    background-color: #5e5e5e;
+    height: .35rem;
+    border-radius: 3px;
+  }
+  
+  .elapsed {
+    width: 50%;
+    background-color: #1db954;
+    height: 100%;
+    border-radius: 3px;
+  }
+
+  .timetext {
+    color: white;
+  }
+
+  .time_full {
+    font-size: .8rem;
+    background-color: #00000060;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-blend-mode: multiply;
+  }
+
+  .player-icon {
+    width: 17px !important;
+  }
+
+/* volume bar */
+
+/* level settings 👇 */
+
+.slider {
+  /* slider */
+  --slider-width: 100%;
+  --slider-height: 6px;
+  --slider-bg: rgb(82, 82, 82);
+  --slider-border-radius: 999px;
+  /* level */
+  --level-color: #fff;
+  --level-transition-duration: .1s;
+  /* icon */
+  --icon-margin: 15px;
+  --icon-color: var(--slider-bg);
+  --icon-size: 25px;
+}
+
+.slider {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.slider .volume {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: var(--icon-margin);
+  color: var(--icon-color);
+  width: var(--icon-size);
+  height: auto;
+}
+
+.slider .level {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  background: var(--slider-bg);
+  overflow: hidden;
+  border-radius: var(--slider-border-radius);
+  -webkit-transition: height var(--level-transition-duration);
+  -o-transition: height var(--level-transition-duration);
+  transition: height var(--level-transition-duration);
+  cursor: inherit;
+}
+
+.slider .level::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+  box-shadow: -200px 0 0 200px var(--level-color);
+}
+
+.slider:hover .level {
+  height: calc(var(--slider-height) * 2);
+}
+
+/* DOWNLOAD BUTTON */
+
+.button {
+  --main-focus: #2d8cf0;
+  --font-color: #dedede;
+  --bg-color-sub: #222;
+  --bg-color: #323232;
+  --main-color: #dedede;
+  position: relative;
+  width: 160px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(21px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 45px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 15px;
+  fill: var(--main-color);
+}
+
+.button:hover {
+  background: var(--bg-color);
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
