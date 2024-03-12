@@ -23,14 +23,16 @@
   font-size: 25px !important; /* Adjust the width as per your requirement */
 }
 
-
+.mynav {
+  width: 24.3%;
+}
 
 .height-80vh {
   height: 80vh !important;
 }
 
-.height-90vh {
-  height: 90vh !important;
+.height-100vh {
+  height: 100vh !important;
 }
 
 /* SEARCH-BAR MY LIBRARY */
@@ -98,7 +100,7 @@
 
 
 .artist {
-    max-height: 450px;
+    height: 200px;
 
     overflow-y: scroll;
 }
