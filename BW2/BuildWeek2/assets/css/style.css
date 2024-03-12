@@ -8,9 +8,6 @@ body {
   font-family: "Circular";
 }
 
-<<<<<<< HEAD
-<<<<<<<<< Temporary merge branch 1
-=========
 .text-size-3 {
   font-size: 1rem !important;
 }
@@ -26,7 +23,6 @@ body {
   font-size: 0.6rem;
 }
 
-<<<<<<< HEAD
 
 =======
 >>>>>>> df0ab5dcad17eaf3a8d0657c60e1e34833ed4eb1
@@ -52,9 +48,6 @@ body {
 
 .bg-custom {
   background-color: #121212 !important;
->>>>>>>>> Temporary merge branch 2
-=======
->>>>>>> df0ab5dcad17eaf3a8d0657c60e1e34833ed4eb1
 }
 
 /* SEARCH-BAR MY LIBRARY */
@@ -364,11 +357,7 @@ body {
   --main-focus: #2d8cf0;
   --font-color: #dedede;
   --bg-color-sub: #222;
-<<<<<<< HEAD
   --bg-color: #121212;
-=======
-  --bg-color: #323232;
->>>>>>> df0ab5dcad17eaf3a8d0657c60e1e34833ed4eb1
   --main-color: #dedede;
   position: relative;
   width: 160px;
