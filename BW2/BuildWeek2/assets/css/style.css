@@ -8,6 +8,13 @@ body {
   font-family: "Circular";
 }
 
+<<<<<<< HEAD
+=======
+.text-size-3 {
+  font-size: 1rem !important;
+}
+
+>>>>>>> f3ad9a5efb9fb3fca2fc0d3217067accac4a0f1f
 .text-size-2 {
   font-size: 0.8rem !important;
 }
@@ -15,6 +22,7 @@ body {
 .text-size-1 {
   font-size: 0.6rem;
 }
+
 
 .card-main1 {
   width: 24%;
@@ -31,6 +39,13 @@ body {
 .icon-size-bigger {
   font-size: 25px !important;
   /* Adjust the width as per your requirement */
+<<<<<<< HEAD
+=======
+}
+
+.bg-custom {
+  background-color: #121212 !important;
+>>>>>>> f3ad9a5efb9fb3fca2fc0d3217067accac4a0f1f
 }
 
 /* SEARCH-BAR MY LIBRARY */
@@ -294,7 +309,7 @@ body {
   --main-focus: #2d8cf0;
   --font-color: #dedede;
   --bg-color-sub: #222;
-  --bg-color: #323232;
+  --bg-color: #121212;
   --main-color: #dedede;
   position: relative;
   width: 160px;
