@@ -23,18 +23,6 @@
   font-size: 25px !important; /* Adjust the width as per your requirement */
 }
 
-.mynav {
-  width: 24.3%;
-}
-
-.height-80vh {
-  height: 80vh !important;
-}
-
-.height-100vh {
-  height: 100vh !important;
-}
-
 /* SEARCH-BAR MY LIBRARY */
 
 .containerSearch {
@@ -92,6 +80,10 @@
     color: white
   }
 
+.height-126vh{
+  height: 126vh;
+}
+
 /*ARTIST CARD AND SCROLL-BAR  */
 
 .cardArtist img {
@@ -100,8 +92,7 @@
 
 
 .artist {
-    height: 200px;
-
+height: 64.5vh;
     overflow-y: scroll;
 }
 
@@ -130,6 +121,9 @@
  height: 89vh;
  border-radius: 14px; 
 
+}
+.heightVh{
+  height: 10vh;
 }
 
   /* PLAYER */
