@@ -42,6 +42,7 @@ body {
   background-color: #121212 !important;
 }
 
+
 /* SEARCH-BAR MY LIBRARY */
 
 .containerSearch {
@@ -175,15 +176,19 @@ body {
     border: none !important;
   }
 
-  .cardHover:hover {
-    background-color: rgba(0, 0, 0, 0.25) !important;
-    border: 1px solid !important;
+  .cardHover:hover{
+    background-color: #1A1A1A !important;
   }
 
   .bgBanner {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 0.116);
   }
 
+  .bgBanner:hover{
+    background-color: rgba(255, 255, 255, 0.212);
+  }
+  
+  
 /* PLAYER */
 .player img {
   width: 60px;
