@@ -8,6 +8,10 @@ body {
   font-family: "Circular";
 }
 
+.text-size-4 {
+  font-size: 4rem !important;
+}
+
 .text-size-3 {
   font-size: 1rem !important;
 }
@@ -171,24 +175,24 @@ body {
   height: 10vh;
 }
 
-  .cardHover {
-    background-color: transparent !important;
-    border: none !important;
-  }
+.cardHover {
+  background-color: transparent !important;
+  border: none !important;
+}
 
-  .cardHover:hover{
-    background-color: #1A1A1A !important;
-  }
+.cardHover:hover {
+  background-color: #1A1A1A !important;
+}
 
-  .bgBanner {
-    background-color: rgba(255, 255, 255, 0.116);
-  }
+.bgBanner {
+  background-color: rgba(255, 255, 255, 0.116);
+}
 
-  .bgBanner:hover{
-    background-color: rgba(255, 255, 255, 0.212);
-  }
-  
-  
+.bgBanner:hover {
+  background-color: rgba(255, 255, 255, 0.212);
+}
+
+
 /* PLAYER */
 .player img {
   width: 60px;
@@ -379,6 +383,7 @@ body {
   justify-content: center;
   gap: 25px;
 }
+
 .social {
   width: 30px;
   height: 30px;
@@ -387,41 +392,38 @@ body {
   justify-content: center;
   border-radius: 50%;
 }
+
 .twitter:hover {
   background: linear-gradient(45deg, #66757f, #00acee, #36daff, #dbedff);
 }
+
 .facebook:hover {
   background: linear-gradient(45deg, #134ac0, #316ff6, #78a3ff);
 }
 
 .instagram:hover {
   background: #f09433;
-  background: -moz-linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  background: -webkit-linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  background: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  background: -moz-linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  background: -webkit-linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  background: linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
 }
+
 .social svg {
   fill: white;
   height: 20px;
@@ -442,7 +444,38 @@ body {
 /* MEDIA QUERY CARD */
 
 @media screen and (min-width: 1900px) {
-.card-3XL {
-  display: inline !important;
+  .card-3XL {
+    display: inline !important;
+  }
 }
+
+/* PAGINA ARTIST */
+
+ul {
+  list-style-type: none;
+}
+
+.li-translate-y {
+  transform: translateY(20px);
+}
+
+.list-style-position-inside {
+  list-style-position: initial;
+}
+
+.img-2 {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+
+.play-1 {
+  font-size: 2.3rem;
+}
+
+/* ALBUM PAGE */
+
+.img-3 {
+  width: 200px;
+  height: 200px;
 }
