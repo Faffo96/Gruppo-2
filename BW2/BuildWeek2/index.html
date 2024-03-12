@@ -9,11 +9,694 @@
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'
         integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz'
         crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Spotify</title>
+    <link rel="icon"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png">
 </head>
 
-<body>
+<body class="bg-black">
+    <div class="container-fluid">
+        <div class="d-flex">
+            <div class="col-3">
+                <div class="bg-dark rounded p-3 mt-3">
+                    <div>
+                        <a href="#" class="text-white text-decoration-none fw-bold"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                class="bi bi-house me-2" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                            </svg>Home </a>
+                    </div>
+                    <div class="mt-3">
+                        <a href="#" class="text-white text-decoration-none fw-bold"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
+                                class="bi bi-search me-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg> Cerca</a>
+                    </div>
+                </div>
+                <div class="bg-dark rounded p-2 mt-2 ps-3 pe-0 ">
+                    <div class="text-white d-flex align-items-center justify-content-between pe-3">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-collection" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z" />
+                            </svg>
+                            <span class="ms-1">La tua libreria</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-plus me-2" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-white mb-2">
+                        <span class="bg-secondary rounded-5 px-2 py-1">Artisti</span>
+                        <span class="bg-secondary rounded-5 px-2 py-1">Album</span>
+                    </div>
+                    <div class="artist">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="mt-3">
+                                <div class="containerSearch">
+                                    <input type="text" name="text"
+                                        class="input bg-dark rounded-3 shadow-none text-white" required=""
+                                        placeholder="Cerca in La tua libreria">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                                            <title>Search</title>
+                                            <path
+                                                d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
+                                                fill="none" stroke="currentColor" stroke-miterlimit="10"
+                                                stroke-width="32">
+                                            </path>
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-white mt-3 pe-2">
+                                <span>Recenti</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-list-ul" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="cardArtist mt-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-3">
+                                <div class="me-3">
+                                    <img class="rounded-5"
+                                        src="https://images.xceed.me/artists/covers/geolier-artist-xceed-cover-301b.jpg"
+                                        alt="Artista">
+                                </div>
+                                <div>
+                                    <p class="m-0 text-white">Geolier</p>
+                                    <p class="m-0 text-white-50">Artista</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-dark mt-3 ms-2 rounded px-3 pt-1  bigContainer col-9">
+                <div class="d-flex align-items-center justify-content-between mt-2">
+                    <div class="d-flex">
+                        <div class="">
+                            <i
+                                class="bi bi-caret-left-fill text-white icon-size-bigger bg-dark rounded-5 px-1 opacity-75"></i>
+                        </div>
+                        <div class="ms-2">
+                            <i
+                                class="bi bi-caret-right-fill text-white icon-size-bigger bg-dark rounded-5 px-1 opacity-75"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="button ">
+                            <span class="button__text text-size-1">Download App</span>
+                            <span class="button__icon"><svg class="svg" data-name="Layer 2"
+                                    id="bdd05811-e15d-428c-bb53-8661459f9307" viewBox="0 0 35 35"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z">
+                                    </path>
+                                    <path
+                                        d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z">
+                                    </path>
+                                    <path
+                                        d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z">
+                                    </path>
+                                </svg></span>
+                        </button>
+                        <div>
+                            <i class="bi bi-bell text-white m-3 icon-size-bigger bg-dark rounded-5 px-2 p-1"></i>
+                        </div>
+                        <div>
+                            <img src="assets/imgs/artisti/TheWeeknd.jpg" width="50px" height="50px"
+                                class="rounded-5 object-fit-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="heightVh">
+                    <div class="row text-white mt-2">
+                        <div class="col-3 px-3 ">
+                            <div class=" d-flex align-items-center bgBanner rounded-2 p-0 mt-2 w-20">
+                                <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                    class="ms-0 rounded-start-2">
+                                <p class="m-0 ms-2"> Calco</p>
+                            </div>
+                        </div>
+                        <div class="col-3 px-3">
+                            <div class=" d-flex align-items-center bgBanner rounded-2 p-0 mt-2 w-20">
+                                <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                    class="ms-0 rounded-start-2">
+                                <p class="m-0 ms-2"> Calco</p>
+                            </div>
+                        </div>
+                        <div class="col-3 px-3">
+                            <div class=" d-flex align-items-center bgBanner rounded-2 p-0 mt-2 w-20">
+                                <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                    class="ms-0 rounded-start-2">
+                                <p class="m-0 ms-2"> Calco</p>
+                            </div>
+                        </div>
+                        <div class="col-3 px-3">
+                            <div class=" d-flex align-items-center bgBanner rounded-2 p-0 mt-2 w-20">
+                                <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                    class="ms-0 rounded-start-2">
+                                <p class="m-0 ms-2"> Calco</p>
+                            </div>
+                        </div>
+                        <div class="col-3 px-3 ">
+                            <div class=" d-flex align-items-center bgBanner rounded-2 p-0 mt-2 w-20">
+                                <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                    class="ms-0 rounded-start-2">
+                                <p class="m-0 ms-2"> Calco</p>
+                            </div>
+                        </div>
+                        <div class="col-3 px-3">
+                            <div class=" d-flex align-items-center bgBanner rounded-2 p-0 mt-2 w-20">
+                                <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                    class="ms-0 rounded-start-2">
+                                <p class="m-0 ms-2"> Calco</p>
+                            </div>
+                        </div>
+                        <div class="col-3 px-3">
+                            <div class=" d-flex align-items-center bgBanner rounded-2 p-0 mt-2 w-20">
+                                <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                    class="ms-0 rounded-start-2">
+                                <p class="m-0 ms-2"> Calco</p>
+                            </div>
+                        </div>
+                        <div class="col-3 px-3">
+                            <div class=" d-flex align-items-center bgBanner rounded-2 p-0 mt-2 w-20">
+                                <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                    class="ms-0 rounded-start-2">
+                                <p class="m-0 ms-2"> Calco</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row justify-content-evenly mt-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="text-white p-0"> Album più popolari </h3>
+                                </div>
+                                <div class>
+                                    <p class="text-white m-0 text-size-1"> mostra tutto </p>
+                                </div>
 
+                            </div>
+                            <div class="d-flex p-0">
+                                <div class="d-flex mx-auto">
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover"
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1 d-xxl-none card-3XL">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1 d-xxl-none card-3XL">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-evenly mt-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3 class="text-white p-0"> Album più popolari </h3>
+                                </div>
+                                <div class>
+                                    <p class="text-white m-0 text-size-1"> mostra tutto </p>
+                                </div>
+                            </div>
+                            <div class="d-flex p-0">
+                                <div class="d-flex mx-auto">
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1  d-xxl-none card-3XL">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex m-1 d-xxl-none card-3XL">
+                                        <div class="card p-2 cardHover "
+                                            style="width: 191px; height: 260px;">
+                                            <div class="text-center">
+                                                <img src="assets/imgs/artisti/TheWeeknd.jpg" class="object-fit-cover"
+                                                    alt="..." width="161px" height="161px">
+                                            </div>
+                                            <div class="mt-2">
+                                                <h5 class="card-title text-white fs-6">After Hours</h5>
+                                                <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="container-fluid justify-content-between d-flex p-0 my-3 pb-3 border-bottom border-opacity-50">
+                            <div class="row row-cols-3">
+                                <div>
+                                    <ul class="list-unstyled">
+                                        <li class="text-white"><a href="javascript:void()" class="text-white text-decoration-none">Azienda</a></li>
+                                        <li class="text-white-50"><a href="javascript:void()" class="linkFooter text-decoration-none">Chi siamo</a></li>
+                                        <li class="text-white-50"><a href="javascript:void()" class="linkFooter text-decoration-none">Opportunità di lavoro</a></li>
+                                        <li class="text-white-50"><a href="javascript:void()" class="linkFooter text-decoration-none">For the Record</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="list-unstyled">
+                                        <li class="text-white"><a href="javascript:void()" class="text-white text-decoration-none">Azienda</a></li>
+                                        <li class="text-white-50"><a href="javascript:void()" class="linkFooter text-decoration-none">Chi siamo</a></li>
+                                        <li class="text-white-50"><a href="javascript:void()" class="linkFooter text-decoration-none">Opportunità di lavoro</a></li>
+                                        <li class="text-white-50"><a href="javascript:void()" class="linkFooter text-decoration-none">For the Record</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="list-unstyled">
+                                        <li class="text-white"><a href="javascript:void()" class="text-white text-decoration-none">Azienda</a></li>
+                                        <li class="text-white-50"><a href="javascript:void()" class="linkFooter text-decoration-none">Chi siamo</a></li>
+                                        <li class="text-white-50"><a href="javascript:void()" class="linkFooter text-decoration-none">Opportunità di lavoro</a></li>
+                                        <li class="text-white-50"><a href="javascript:void()" class="linkFooter text-decoration-none">For the Record</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="socials-container">
+                                <a href="#" class="social twitter">
+                                    <svg height="1em" viewBox="0 0 512 512">
+                                        <path
+                                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="social facebook"><svg height="1em" viewBox="0 0 320 512">
+                                        <path
+                                            d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a href="#" class="social instagram"><svg height="1em" viewBox="0 0 448 512">
+                                        <path
+                                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-white-50 text-size-2 d-flex align-items-center justify-content-between">
+                            <div>
+                                <ul class="navbar list-unstyled">
+                                    <li class="me-3"><a href="javascript:void()" class="text-decoration-none linkFooter">Informazioni legali</a></li>
+                                    <li class="me-3"><a href="javascript:void()" class="text-decoration-none linkFooter">Sicurezza e Centro sulla privacy</a></li>
+                                    <li class="me-3"><a href="javascript:void()" class="text-decoration-none linkFooter">Informativa sulla privacy</a></li>
+                                    <li class="me-3"><a href="javascript:void()" class="text-decoration-none linkFooter">Impostazioni cookie</a></li>
+                                    <li class="me-3"><a href="javascript:void()" class="text-decoration-none linkFooter">Info annunci</a></li>
+                                    <li class="me-3"><a href="javascript:void()" class="text-decoration-none linkFooter">Accessibilità</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p>&copy; 2024 Spotify AB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center player sticky-bottom">
+            <div class=" d-flex col-3">
+                <div>
+                    <img src="assets/imgs/artisti/Geolier.jpg" alt="" class="rounded-1">
+                </div>
+                <div class="ms-3 align-content-center">
+                    <div class="d-flex">
+                        <div>
+                            <p class="m-0 text-white">Geolier</p>
+                            <p class="m-0 text-white-50">Artista</p>
+                        </div>
+                        <div class=" d-flex align-self-center ms-4">
+                            <svg width="24" height="20" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.343 7.778a4.5 4.5 0 0 1 7.339-1.46L12 7.636l1.318-1.318a4.5 4.5 0 1 1 6.364 6.364L12 20.364l-7.682-7.682a4.501 4.501 0 0 1-.975-4.904Z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center">
+                <div class="d-flex justify-content-center align-items-center">
+                    <svg class="text-white icon-size-bigger" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-shuffle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5" />
+                        <path
+                            d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
+                    </svg>
+                    <div>
+                        <i class="bi bi-skip-start-fill text-white icon-size-bigger"></i>
+                        <i class="bi bi-play-circle text-white icon-size-bigger"></i>
+                        <i class="bi bi-skip-end-fill text-white icon-size-bigger"></i>
+                        <i class="bi bi-repeat text-white icon-size-bigger"></i>
+                    </div>
+                </div>
+                <div class="song-time d-flex justify-content-center my-align-items-center">
+                    <p class="timetext time_now text-size-2 mb-0 p-2 text-secondary">1:31</p>
+                    <div class="time">
+                        <div class="elapsed"></div>
+                    </div>
+                    <p class="timetext time_full text-size-2 mb-0 text-secondary">3:46</p>
+                </div>
+            </div>
+            <div class="d-flex text-white col-3 my-align-items-center justify-content-end">
+                <i class="bi bi-play-btn m-1"></i>
+                <i class="bi bi-card-text m-1"></i>
+                <i class="bi bi-view-list m-1"></i>
+                <i class="bi bi-pc-display m-1"></i>
+                <label class="slider m-1">
+                    <input type="range" class="level">
+                    <svg class="volume" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0"
+                        viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <path
+                                d="M18.36 19.36a1 1 0 0 1-.705-1.71C19.167 16.148 20 14.142 20 12s-.833-4.148-2.345-5.65a1 1 0 1 1 1.41-1.419C20.958 6.812 22 9.322 22 12s-1.042 5.188-2.935 7.069a.997.997 0 0 1-.705.291z"
+                                fill="currentColor" data-original="#000000"></path>
+                            <path
+                                d="M15.53 16.53a.999.999 0 0 1-.703-1.711C15.572 14.082 16 13.054 16 12s-.428-2.082-1.173-2.819a1 1 0 1 1 1.406-1.422A6 6 0 0 1 18 12a6 6 0 0 1-1.767 4.241.996.996 0 0 1-.703.289zM12 22a1 1 0 0 1-.707-.293L6.586 17H4c-1.103 0-2-.897-2-2V9c0-1.103.897-2 2-2h2.586l4.707-4.707A.998.998 0 0 1 13 3v18a1 1 0 0 1-1 1z"
+                                fill="currentColor" data-original="#000000"></path>
+                        </g>
+                    </svg>
+                </label>
+                <i class="bi bi-arrows-angle-expand m-1"></i>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
