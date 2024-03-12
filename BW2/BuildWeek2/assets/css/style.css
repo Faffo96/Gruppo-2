@@ -8,6 +8,12 @@ body {
   font-family: "Circular";
 }
 
+
+.text-size-3 {
+  font-size: 1rem !important;
+}
+
+
 .text-size-2 {
   font-size: 0.8rem !important;
 }
@@ -15,6 +21,7 @@ body {
 .text-size-1 {
   font-size: 0.6rem;
 }
+
 
 .card-main1 {
   width: 24%;
@@ -31,6 +38,13 @@ body {
 .icon-size-bigger {
   font-size: 25px !important;
   /* Adjust the width as per your requirement */
+
+}
+
+.bg-custom {
+  background-color: #121212 !important;
+
+
 }
 
 /* SEARCH-BAR MY LIBRARY */
@@ -111,6 +125,7 @@ body {
   width: 9px;
   /* Regola la larghezza della scrollbar */
 
+
 }
 
 .artist::-webkit-scrollbar-thumb {
@@ -132,6 +147,30 @@ body {
 
 .bigContainer {
 
+
+
+}
+
+.artist::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.507);
+  /* Colore della barra interna */
+
+}
+
+.artist::-webkit-scrollbar-track {
+  background-color: transparent;
+  /* Sfondo trasparente */
+}
+
+.artist::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.808);
+  /* Colore della barra interna al passaggio del mouse (opzionale) */
+}
+
+
+.bigContainer {
+
+
   overflow-y: scroll;
 }
 
@@ -152,10 +191,19 @@ body {
   /* Sfondo trasparente */
 }
 
+
 .bigContainer::-webkit-scrollbar-thumb:hover {
   background-color: rgba(255, 255, 255, 0.808);
   /* Colore della barra interna al passaggio del mouse (opzionale) */
 }
+
+
+
+.bigContainer::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.808);
+  /* Colore della barra interna al passaggio del mouse (opzionale) */
+}
+
 
 .heightVh {
   height: 10vh;
@@ -294,7 +342,7 @@ body {
   --main-focus: #2d8cf0;
   --font-color: #dedede;
   --bg-color-sub: #222;
-  --bg-color: #323232;
+  --bg-color: #121212;
   --main-color: #dedede;
   position: relative;
   width: 160px;
