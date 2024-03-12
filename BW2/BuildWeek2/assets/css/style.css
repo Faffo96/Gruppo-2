@@ -12,9 +12,6 @@ body {
   font-size: 1rem !important;
 }
 
->>>>>>>>> Temporary merge branch 2
-=======
->>>>>>> df0ab5dcad17eaf3a8d0657c60e1e34833ed4eb1
 .text-size-2 {
   font-size: 0.8rem !important;
 }
@@ -24,8 +21,6 @@ body {
 }
 
 
-=======
->>>>>>> df0ab5dcad17eaf3a8d0657c60e1e34833ed4eb1
 .card-main1 {
   width: 24%;
 }
@@ -41,9 +36,6 @@ body {
 .icon-size-bigger {
   font-size: 25px !important;
   /* Adjust the width as per your requirement */
-<<<<<<< HEAD
-<<<<<<<<< Temporary merge branch 1
-=========
 }
 
 .bg-custom {
@@ -120,7 +112,7 @@ body {
 
 
 .artist {
-  height: 64.5vh;
+  height: 60.5vh;
   overflow-y: scroll;
 }
 
@@ -128,10 +120,6 @@ body {
   width: 9px;
   /* Regola la larghezza della scrollbar */
 
-<<<<<<< HEAD
-
-=======
->>>>>>> df0ab5dcad17eaf3a8d0657c60e1e34833ed4eb1
 }
 
 .artist::-webkit-scrollbar-thumb {
@@ -153,33 +141,6 @@ body {
 
 .bigContainer {
 
-<<<<<<< HEAD
-
-
-}
-
-.artist::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.507);
-  /* Colore della barra interna */
-
-}
-
-.artist::-webkit-scrollbar-track {
-  background-color: transparent;
-  /* Sfondo trasparente */
-}
-
-.artist::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.808);
-  /* Colore della barra interna al passaggio del mouse (opzionale) */
-}
-
-
-.bigContainer {
-
-
-=======
->>>>>>> df0ab5dcad17eaf3a8d0657c60e1e34833ed4eb1
   overflow-y: scroll;
 }
 
@@ -200,26 +161,11 @@ body {
   /* Sfondo trasparente */
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> df0ab5dcad17eaf3a8d0657c60e1e34833ed4eb1
 .bigContainer::-webkit-scrollbar-thumb:hover {
   background-color: rgba(255, 255, 255, 0.808);
   /* Colore della barra interna al passaggio del mouse (opzionale) */
 }
 
-<<<<<<< HEAD
-
-
-.bigContainer::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.808);
-  /* Colore della barra interna al passaggio del mouse (opzionale) */
-}
-
-
-=======
->>>>>>> df0ab5dcad17eaf3a8d0657c60e1e34833ed4eb1
 .heightVh {
   height: 10vh;
 }
