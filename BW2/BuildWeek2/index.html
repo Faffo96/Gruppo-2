@@ -16,16 +16,12 @@
         href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png">
 </head>
 
-<body>
+<body class="overflow-hidden">
     <div class="container-fluid bg-black px-2">
-        <div>
-
-        </div>
-
         <main>
-            <nav class=" col-3 position-fixed mt-2">
+            <nav class=" col-3 position-fixed mt-2 mynav">
                 <div class="">
-                    <div class="bg-dark rounded ps-3">
+                    <div class="bg-dark rounded ps-3 ">
                         <div>
                             <a href="#" class="text-white text-decoration-none fw-bold"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
@@ -43,7 +39,7 @@
                                 </svg> Cerca</a>
                         </div>
                     </div>
-                    <div class="bg-dark rounded p-2 mt-2 ps-3 pe-0 height-80vh">
+                    <div class="bg-dark rounded p-2 mt-2 ps-3 pe-0 ">
                         <div class="text-white d-flex align-items-center justify-content-between pe-3">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
@@ -243,8 +239,8 @@
             <div class="main">
                 <div class="row justify-content-end">
                     <div class="lala col-9 pe-0">
-                        <div class="container">
-                            <div class="d-flex align-items-center justify-content-between mt-2">
+                        <div class="container-fluid bg-dark" id="mainSection1">
+                            <div class="d-flex align-items-center justify-content-between mt-2" id="headerMain">
                                 <div class="d-flex">
                                     <div class="">
                                         <i
@@ -282,52 +278,101 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="container">
-                            <div class="row text-white">
-                                <div class="col-3 d-flex align-items-center bg-secondary rounded-2 p-0">
-                                    <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px" class="ms-0 rounded-start-2">
-                                    <p class="m-0 ms-2"> Calco</p>
+                            <div class="container" >
+                                <div class="row text-white justify-content-evenly">
+                                    <div class="col-3 d-flex align-items-center bg-secondary rounded-2 p-0 mt-2 w-20">
+                                        <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                            class="ms-0 rounded-start-2">
+                                        <p class="m-0 ms-2"> Calco</p>
+                                    </div>
+                                    <div class=" col-3 d-flex align-items-center bg-secondary rounded-2 p-0 mt-2 w-20">
+                                        <img src=" assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                            class="ms-0 rounded-start-2">
+                                        <p class="m-0 ms-2"> Calco</p>
+                                    </div>
+                                    <div class=" col-3 d-flex align-items-center bg-secondary rounded-2 p-0 mt-2 w-20">
+                                        <img src=" assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                            class="ms-0 rounded-start-2">
+                                        <p class="m-0 ms-2"> Calco</p>
+                                    </div>
+                                    <div class=" col-3 d-flex align-items-center bg-secondary rounded-2 p-0 mt-2 w-20">
+                                        <img src=" assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                            class="ms-0 rounded-start-2">
+                                        <p class="m-0 ms-2"> Calco</p>
+                                    </div>
+    
+                                    <div class="col-3 d-flex align-items-center bg-secondary rounded-2 p-0 mt-2 w-20">
+                                        <img src="assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                            class="ms-0 rounded-start-2">
+                                        <p class="m-0 ms-2"> Calco</p>
+                                    </div>
+                                    <div class=" col-3 d-flex align-items-center bg-secondary rounded-2 p-0 mt-2 w-20">
+                                        <img src=" assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                            class="ms-0 rounded-start-2">
+                                        <p class="m-0 ms-2"> Calco</p>
+                                    </div>
+                                    <div class=" col-3 d-flex align-items-center bg-secondary rounded-2 p-0 mt-2 w-20">
+                                        <img src=" assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                            class="ms-0 rounded-start-2">
+                                        <p class="m-0 ms-2"> Calco</p>
+                                    </div>
+                                    <div class=" col-3 d-flex align-items-center bg-secondary rounded-2 p-0 mt-2 w-20">
+                                        <img src=" assets/imgs/artisti/Anuel.jpg" width="50px" height="50px"
+                                            class="ms-0 rounded-start-2">
+                                        <p class="m-0 ms-2"> Calco</p>
+                                    </div>
                                 </div>
-                                <div class=" col-3 d-flex align-items-center">
-                                    <img src=" assets/imgs/artisti/Anuel.jpg" width="50px" height="50px">
-                                    <p class="m-0 ms-2"> Calco</p>
+                                <div>
+                                    <h3 class="text-white"> Album più popolari </h3>
+                                    <div class="d-flex">
+                                        <div class="card p-2" style="width: 18rem;">
+                                            <img src="assets/imgs/artisti/TheWeeknd.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Club dogo</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make
+                                                    up the bulk of the card's content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class=" col-3 d-flex align-items-center">
-                                    <img src=" assets/imgs/artisti/Anuel.jpg" width="50px" height="50px">
-                                    <p class="m-0 ms-2"> Calco</p>
+                                <div>
+                                    <h3 class="text-white"> Album più popolari </h3>
+                                    <div class="d-flex">
+                                        <div class="card p-2" style="width: 18rem;">
+                                            <img src="assets/imgs/artisti/TheWeeknd.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Club dogo</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make
+                                                    up the bulk of the card's content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class=" col-3 d-flex align-items-center">
-                                    <img src=" assets/imgs/artisti/Anuel.jpg" width="50px" height="50px">
-                                    <p class="m-0 ms-2"> Calco</p>
+                                <div>
+                                    <h3 class="text-white"> Album più popolari </h3>
+                                    <div class="d-flex">
+                                        <div class="card p-2" style="width: 18rem;">
+                                            <img src="assets/imgs/artisti/TheWeeknd.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Club dogo</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make
+                                                    up the bulk of the card's content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
-                            <div class=" col-4">
-                                <div>
-
-                                </div>
-                                <div>
-
-                                </div>
-                                <div>
-
-                                </div>
-                                <div>
-
-                                </div>
-
-                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
     </div>
 
 
-    <div class="container-fluid player mt-3 my-align-items-center sticky-bottom">
+    <div class="container-fluid player bg-black my-align-items-center">
         <div class="row">
             <div class=" d-flex col-3">
                 <div>

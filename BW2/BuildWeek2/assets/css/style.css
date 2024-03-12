@@ -7,6 +7,10 @@
   font-size: 0.6rem;
 }
 
+.card-main1 {
+  width: 24%;
+}
+
 .display-flex {
   display: flex !important;
 }
@@ -19,12 +23,16 @@
   font-size: 25px !important; /* Adjust the width as per your requirement */
 }
 
-.lala { /* >:) */
-  height: 2000px;
+.mynav {
+  width: 24.3%;
 }
 
 .height-80vh {
   height: 80vh !important;
+}
+
+.height-100vh {
+  height: 100vh !important;
 }
 
 /* SEARCH-BAR MY LIBRARY */
@@ -91,9 +99,8 @@
 }
 
 
-
 .artist {
-    max-height: 450px;
+    height: 200px;
 
     overflow-y: scroll;
 }
@@ -115,6 +122,15 @@
   .artist::-webkit-scrollbar-thumb:hover {
     background-color:rgba(255, 255, 255, 0.808); /* Colore della barra interna al passaggio del mouse (opzionale) */
   }
+
+/* HEADER MAIN */
+
+#mainSection1 {
+  overflow-y: scroll;
+ height: 89vh;
+ border-radius: 14px; 
+
+}
 
   /* PLAYER */
 .player img{
