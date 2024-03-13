@@ -80,17 +80,20 @@ fill: #1ED760
 }
 
 
-/* SEARCH-BAR MY LIBRARY */
+/* SEARCH-BAR MY HEADER */
 
-.containerSearch {
+#search2 {
+  display: none;
+}
+
+.containerSearch2 {
   position: relative;
   --size-button: 40px;
   color: white;
   display: flex;
-  /* Aggiunto per allineare la barra di ricerca e l'icona */
 }
 
-.input {
+.containerSearch2 .input2 {
   padding-left: var(--size-button);
   height: var(--size-button);
   font-size: 12px;
@@ -99,21 +102,89 @@ fill: #1ED760
   outline: none;
   width: var(--size-button);
   transition: all ease 0.3s;
-  background-color: #191A1E;
+  background-color: transparent;
   box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
   cursor: pointer;
 }
 
-.input:focus,
-.input:not(:invalid) {
+.containerSearch2 .input2,
+.containerSearch2 .input2:not(:invalid) {
+  width: 300px;
+  cursor: text;
+  background-color: #2A2A2A;
+  box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+}
+
+.containerSearch2 .input2:focus+.icon2,
+.containerSearch2 .input2:not(:invalid)+.icon2 {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.containerSearch2 .input2:hover {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+}
+
+.containerSearch2 .input2:focus {
+  border: 1px solid white;
+  color: white;
+}
+
+.containerSearch2 .icon2 {
+  position: absolute;
+  width: var(--size-button);
+  height: var(--size-button);
+  top: -2px;
+  left: -2px;
+  padding: 8px;
+  pointer-events: none;
+}
+
+.containerSearch2 .icon2 svg {
+  width: 80%;
+  height: 80%;
+}
+
+.containerSearch2 .input2::placeholder {
+  color: rgba(255, 255, 255, 0.26);
+}
+
+
+
+/* SEARCH-BAR MY LIBRARY */
+
+.containerSearch {
+  position: relative;
+  --size-button: 40px;
+  color: white;
+  display: flex;
+
+}
+
+.containerSearch .input {
+  padding-left: var(--size-button);
+  height: var(--size-button);
+  font-size: 12px;
+  border: none;
+  color: #fff;
+  outline: none;
+  width: var(--size-button);
+  transition: all ease 0.3s;
+  background-color: #2A2A2A;
+  box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+  cursor: pointer;
+}
+
+.containerSearch .input:focus,
+.containerSearch .input:not(:invalid) {
   width: 200px;
   cursor: text;
   box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
-  background-color: rgba(255, 255, 255, 0.281) !important;
+  background-color: #2A2A2A !important;
 }
 
-.input:focus+.icon,
-.input:not(:invalid)+.icon {
+.containerSearch .input:focus+.icon,
+.containerSearch .input:not(:invalid)+.icon {
   pointer-events: all;
   cursor: pointer;
 }
@@ -133,7 +204,7 @@ fill: #1ED760
   height: 100%;
 }
 
-.input::placeholder {
+.containerSearch .input::placeholder {
   color: white
 }
 
@@ -224,7 +295,25 @@ fill: #1ED760
   background-color: rgba(255, 255, 255, 0.212);
 }
 
+#main2 {
+  display: none;
+}
 
+
+.cardGener {
+  position: relative;
+  overflow: hidden;
+  width: 180px;
+  height: 180px;
+}
+
+
+.cardGener img {
+  position: absolute;
+  right: -30px;
+  top: 80px;
+  rotate: 20deg;
+}
 /* PLAYER */
 .player img {
   width: 60px;
