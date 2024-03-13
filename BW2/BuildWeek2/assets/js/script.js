@@ -1,6 +1,7 @@
 const player = document.getElementById('player');
 const btnPlay = document.getElementById('btnPlay');
 const volume = document.getElementById('volume');
+const documentCard1 = document.getElementById('containerCard1')
 const documentCard2 = document.getElementById('containerCard2')
 const documentCard3 = document.getElementById('containerCard3')
 const documentCard3_2 = document.getElementById('containerCard3_2')
@@ -13,7 +14,13 @@ let cards3 = [
     '13994766',
     '100111992',
     '74308932',
-    '309377597'
+    '309377597',
+    '557619402',
+    '517196372',
+    '61419582',
+    '446034935',
+    '171945282',
+    '124513502',
 ]
 
 const getFetch = async (category, id) => {
@@ -21,7 +28,7 @@ const getFetch = async (category, id) => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '835a0e9802msh157b5b5d7ff5689p1402cfjsna720f5edd6fa',
+            'X-RapidAPI-Key': 'c776300d22mshd3bea6709348bbfp1dc7c8jsn11b2c60ef719',
             'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
         }
     };
@@ -33,6 +40,39 @@ const getFetch = async (category, id) => {
         console.error(error);
     }
 };
+
+
+function createCard1(albumData) {
+    const outerDiv = document.createElement('div');
+    outerDiv.classList.add('d-flex', 'cardHover', 'p-2', 'rounded');
+
+    const imageDiv = document.createElement('div');
+    imageDiv.classList.add('me-3');
+
+    const img = document.createElement('img');
+    img.classList.add('rounded-5');
+    img.setAttribute('src', albumData.artist.picture_small);
+    img.setAttribute('alt', 'Artista');
+    imageDiv.appendChild(img);
+
+    const textDiv = document.createElement('div');
+
+    const namePara = document.createElement('p');
+    namePara.classList.add('m-0', 'text-white');
+    namePara.textContent = albumData.artist.name; 
+    textDiv.appendChild(namePara);
+
+    const typePara = document.createElement('p');
+    typePara.classList.add('m-0', 'text-white-50');
+    typePara.textContent = 'Artista';
+    textDiv.appendChild(typePara);
+
+    outerDiv.appendChild(imageDiv);
+    outerDiv.appendChild(textDiv);
+
+    documentCard1.appendChild(outerDiv);
+}
+
 
 function createCard2(albumData) {
     const newDiv = document.createElement('div')
@@ -103,7 +143,7 @@ function createCard3(albumData, isNone) {
     documentCard3.appendChild(outerDiv);
 }
 
-function createCard3_2(isNone) {
+function createCard3_2(albumData, isNone) {
     const outerDiv = document.createElement('div');
     outerDiv.classList.add('d-flex', 'm-1');
     if (isNone) {
@@ -119,9 +159,9 @@ function createCard3_2(isNone) {
     imageDiv.classList.add('text-center');
 
     const img = document.createElement('img');
-    img.setAttribute('src', 'assets/imgs/artisti/TheWeeknd.jpg');
+    img.setAttribute('src', albumData.cover_medium);
     img.setAttribute('alt', '...');
-    img.classList.add('object-fit-cover rounded');
+    img.classList.add('object-fit-cover');
     img.style.width = '161px';
     img.style.height = '161px';
     imageDiv.appendChild(img);
@@ -131,12 +171,12 @@ function createCard3_2(isNone) {
 
     const title = document.createElement('h5');
     title.classList.add('card-title', 'text-white', 'fs-6');
-    title.textContent = 'After Hours';
+    title.textContent = albumData.title;
     textDiv.appendChild(title);
 
     const artist = document.createElement('p');
     artist.classList.add('card-text', 'text-white-50', 'text-size-2');
-    artist.textContent = 'The Weeknd';
+    artist.textContent = albumData.artist.name;
     textDiv.appendChild(artist);
 
     innerDiv.appendChild(imageDiv);
@@ -148,6 +188,10 @@ function createCard3_2(isNone) {
 }
 
 async function fillMain() {
+    for (let i = 0; i < cards3.length; i++) {
+        const albumData = await getFetch('album', cards3[i]);
+        createCard1(albumData);
+    }
     // Creazione delle card di tipo 2
     for (let i = 0; i < 8; i++) {
         const albumData = await getFetch('album', cards3[i]);
@@ -155,9 +199,14 @@ async function fillMain() {
     }
 
     // Fetch dei dati degli album e popolamento delle card di tipo 3
-    for (let i = 0; i < cards3.length; i++) {
+    for (let i = 0; i < cards3.length - 7; i++) {
         const albumData = await getFetch('album', cards3[i]);
         createCard3(albumData,i < 5 ? false : true);
+    }
+
+    for (let i = 7; i < cards3.length; i++) {
+        const albumData = await getFetch('album', cards3[i]);
+        createCard3_2(albumData, i < 12 ? false : true);
     }
 }
 
