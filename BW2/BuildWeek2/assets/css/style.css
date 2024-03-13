@@ -5,19 +5,28 @@
 }
 
 body {
-  font-family: "Circular";
+  font-family: "Roboto";
 }
 
 .text-size-4 {
   font-size: 4rem !important;
 }
 
+
 .text-size-3 {
   font-size: 1rem !important;
 }
 
+.text-size-2-5 {
+  font-size: 0.9rem !important;
+}
+
 .text-size-2 {
   font-size: 0.8rem !important;
+}
+
+.text-size-1-5{
+  font-size: 0.7rem !important;
 }
 
 .text-size-1 {
@@ -36,6 +45,18 @@ fill: #1ED760
   stroke: #1ED760;
 }
 
+.border-custom-2{
+  opacity: 0;
+}
+
+.circular-regular {
+  font-family: "Circular"; /* :P */
+}
+
+
+.opacityHover:hover p, .opacityHover:hover .border-custom-2{
+  opacity: 1 !important;
+}
 
 .card-main1 {
   width: 24%;
