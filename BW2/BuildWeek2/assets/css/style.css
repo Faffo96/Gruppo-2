@@ -12,8 +12,13 @@ body {
   font-size: 4rem !important;
 }
 
+
 .text-size-3 {
   font-size: 1rem !important;
+}
+
+.text-size-2-5 {
+  font-size: 0.9rem !important;
 }
 
 .text-size-2 {
@@ -40,12 +45,16 @@ fill: #1ED760
   stroke: #1ED760;
 }
 
+.border-custom-2{
+  opacity: 0;
+}
+
 .circular-regular {
   font-family: "Circular"; /* :P */
 }
 
 
-.opacityHover:hover p{
+.opacityHover:hover p, .opacityHover:hover .border-custom-2{
   opacity: 1 !important;
 }
 
