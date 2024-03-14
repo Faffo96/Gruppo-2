@@ -255,10 +255,6 @@ async function fillMain() {
 }
 
 
-
-
-
-
 window.addEventListener('load', init);
 
 async function init() {
