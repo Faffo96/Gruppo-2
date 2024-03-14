@@ -317,13 +317,13 @@
         <div class="row align-items-center player mt-3">
             <div class=" d-flex col-3">
                 <div>
-                    <img src="assets/imgs/artisti/Geolier.jpg" alt="" class="rounded-1">
+                    <img src="..." alt="" class="rounded-1" id="playerImg">
                 </div>
                 <div class="ms-3 align-content-center">
                     <div class="d-flex">
                         <div>
-                            <p class="m-0 text-white">Geolier</p>
-                            <p class="m-0 text-white-50">Artista</p>
+                            <p class="m-0 text-white" id="playerTitle"></p>
+                            <p class="m-0 text-white-50" id="playerArtist"></p>
                         </div>
                         <div class=" d-flex align-self-center ms-4">
                             <svg width="24" height="20" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -347,7 +347,7 @@
                             d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
                     </svg>
                     <i class="bi bi-skip-start-fill linkFooter icon-size-bigger mx-3"></i>
-                    <i class="bi bi-play-circle-fill linkFooter icon-size-bigger mx-3"></i>
+                    <i class="bi bi-play-circle-fill linkFooter icon-size-bigger mx-3" onclick="playPause()" id="btnPlay"></i>
                     <i class="bi bi-skip-end-fill linkFooter icon-size-bigger mx-3"></i>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-repeat linkFooter icon-size-bigger mx-3" viewBox="0 0 16 16">
@@ -356,11 +356,11 @@
                     </svg>
                 </div>
                 <div class="song-time d-flex justify-content-center my-align-items-center">
-                    <p class="timetext time_now text-size-2 mb-0 p-2 text-secondary">1:31</p>
+                    <p class="timetext time_now text-size-2 mb-0 p-2 text-secondary" id="currentTime">0:00</p>
                     <div class="time">
                         <div class="elapsed"></div>
                     </div>
-                    <p class="timetext time_full text-size-2 mb-0 text-secondary">3:46</p>
+                    <p class="timetext time_full text-size-2 mb-0 text-secondary" id="remainingTime">0:00</p>
                 </div>
             </div>
             <div class="d-flex text-white col-3 my-align-items-center justify-content-end">
@@ -369,7 +369,7 @@
                 <i class="bi bi-view-list m-1 linkFooter"></i>
                 <i class="bi bi-pc-display m-1 linkFooter"></i>
                 <label class="slider m-1 linkFooter">
-                    <input type="range" class="level">
+                    <input type="range" class="level" id="inputRange">
                     <svg class="volume" xmlns="http://www.w3.org/2000/svg" version="1.1"
                         xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0"
                         viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
@@ -387,6 +387,10 @@
             </div>
         </div>
     </div>
+
+    <audio id="player">
+        <source src="" id="previewMP3" type="audio/mpeg">
+    </audio>
 
     <script src="assets/js/script.js"></script>
 </body>

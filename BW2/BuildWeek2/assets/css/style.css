@@ -33,9 +33,13 @@ body {
   font-size: 0.6rem;
 }
 
-.bg-custom-2{
+.custom-2{
 color: #1ED760;
 }
+
+/* .custom-4:hover{
+  color: #1ED760;
+  } */
 
 .bg-custom-3:hover path{
 fill: #1ED760
@@ -336,7 +340,7 @@ fill: #1ED760
 }
 
 .elapsed {
-  width: 50%;
+  width: 0;
   background-color: #1db954;
   height: 100%;
   border-radius: 3px;
@@ -356,6 +360,23 @@ fill: #1ED760
 
 .player-icon {
   width: 17px !important;
+}
+
+.playerCard2 {
+  margin-top: 4px;
+  font-size: 2.7rem !important;
+  color: transparent;
+}
+
+.playerCard3 {
+  position: absolute;
+  transform: translate(-94px, 71px);
+  font-size: 3.5rem !important;
+  color: transparent;
+}
+
+.card2:hover .playerCard2, .card3:hover .playerCard3 {
+  color: #1ED760;
 }
 
 /* volume bar */
@@ -554,6 +575,7 @@ fill: #1ED760
 /* LINK FOOTER */
 
 .linkFooter {
+  transform: t;
   color: white;
   opacity: 0.5;
   transition: opacity 0.3s;
