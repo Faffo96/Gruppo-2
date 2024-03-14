@@ -13,6 +13,15 @@ const documentPlayerArtist = document.getElementById('playerArtist');
 const documentPlayerTitle = document.getElementById('playerTitle');
 let albumData;
 
+/* const keys = [
+    'c776300d22mshd3bea6709348bbfp1dc7c8jsn11b2c60ef719',
+    '835a0e9802msh157b5b5d7ff5689p1402cfjsna720f5edd6fa',
+    'c81611be3dmshc4dfc559f330731p135b38jsn1f885d01cc8',
+    'e24f190dfamsh3b4e04c6923511ep1e6fbdjsn6a9e95f0b3d6',
+    '0e88591ab3mshfb4bba544a6c2b8p1d513ejsn6b9bf8b7580e',
+    '0a58588e6cmsh61297e891fcc988p1ef45bjsn9be9ca038584'
+  ]; */
+
 
 idBraniPreferiti = [];
 let colors = ['#DC148C', '#8400E7', '#27856A', '#0D73EC', '#777777', '#E13300'];
@@ -33,12 +42,12 @@ let algorithmUserFeed = [
     '124513502',
 ]
 
-const getFetch = async (category, id) => {
+const getFetch = async (category, id, /* key */) => {
     const url = `https://deezerdevs-deezer.p.rapidapi.com/${category}/${id}`;
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '835a0e9802msh157b5b5d7ff5689p1402cfjsna720f5edd6fa',
+            'X-RapidAPI-Key': 'e24f190dfamsh3b4e04c6923511ep1e6fbdjsn6a9e95f0b3d6',
             'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
         }
     };
@@ -55,6 +64,7 @@ const getFetch = async (category, id) => {
 function createCard1(albumData) {
     const outerDiv = document.createElement('div');
     outerDiv.classList.add('d-flex', 'cardHover', 'p-2', 'rounded');
+    outerDiv.setAttribute('onclick', `fillArtistPage()`)
 
 
     const imageDiv = document.createElement('div');
@@ -88,6 +98,7 @@ function createCard1(albumData) {
 function createCard2(albumData) {
     const newDiv = document.createElement('div');
     newDiv.classList.add('col-3', 'px-3', 'circular-regular');
+    newDiv.setAttribute('onclick', `fillArtistPage()`)
 
     const div = document.createElement('div');
     div.classList.add('card2', 'd-flex', 'align-items-center', 'bgBanner', 'rounded-2', 'p-0', 'mt-2', 'w-20');
@@ -111,7 +122,7 @@ function createCard2(albumData) {
 
     const playIcon = document.createElement('i');
     playIcon.classList.add('bi', 'bi-play-circle-fill', 'icon-size-bigger', 'mx-3', 'playerCard2', 'custom-4');
-    playIcon.setAttribute('onclick', `togglePlayer('${albumData.tracks.data[0].preview}', this, '${albumData.tracks.data[0].title}','${albumData.artist.name}', '${albumData.cover}' )`);
+    playIcon.setAttribute('onclick', `togglePlayer('${albumData.tracks.data[0].preview}', this, '${albumData.tracks.data[0].title}','${albumData.artist.name}', '${albumData.cover}')`);
     innerDiv.appendChild(playIcon);
 
 
@@ -121,6 +132,8 @@ function createCard2(albumData) {
 function createCard3(albumData, isNone, targetElement) {
     const outerDiv = document.createElement('div');
     outerDiv.classList.add('card3', 'd-flex', 'm-1');
+    outerDiv.setAttribute('onclick', `fillAlbumPage(this);`)
+
     if (isNone) {
         outerDiv.classList.add('d-xxl-none', 'card-3XL');
     }
@@ -143,7 +156,7 @@ function createCard3(albumData, isNone, targetElement) {
 
     const playIcon = document.createElement('i');
     playIcon.classList.add('bi', 'bi-play-circle-fill', 'icon-size-bigger', 'mx-3', 'playerCard3');
-    playIcon.setAttribute('onclick', `togglePlayer('${albumData.tracks.data[0].preview}', this, '${albumData.tracks.data[0].title}','${albumData.artist.name}', '${albumData.cover}' )`);
+    playIcon.setAttribute('onclick', `togglePlayer('${albumData.tracks.data[0].preview}', this, '${albumData.tracks.data[0].title}','${albumData.artist.name}', '${albumData.cover}' ); event.stopPropagation();`);
     playIcon.style.position = 'absolute';
     playIcon.style.transform = 'translate(-94px, 71px)';
     playIcon.style.fontSize = '3.5rem';
@@ -171,123 +184,43 @@ function createCard3(albumData, isNone, targetElement) {
 }
 
 
+function clearMain() {
+    const showMain = document.getElementById('showMain');
+    showMain.style.display = 'none';
 
-function createCard4(albumData, index) {
-    // Creazione dell'elemento div con le classi specificate
-    const cardDiv = document.createElement('div');
-    cardDiv.classList.add('rounded-3', 'cardGener', 'mb-3');
-    // Assegna un colore di sfondo dalla lista di colori in base all'indice della card
-    cardDiv.style.backgroundColor = colors[index % colors.length];
-
-
-    // Creazione dell'elemento h4 con la classe specificata e il testo "Musica"
-    const h4Element = document.createElement('h4');
-    h4Element.classList.add('mt-2', 'ms-1', 'text-white', 'circular-regular');
-    h4Element.textContent = albumData.artist.name;
-
-    // Creazione dell'elemento img con la classe specificata, l'attributo src e l'attributo alt
-    const imgElement = document.createElement('img');
-    imgElement.classList.add('shadow');
-    imgElement.setAttribute('src', albumData.artist.picture);
-    imgElement.setAttribute('alt', '');
-
-    // Aggiunta degli elementi figlio al div principale
-    cardDiv.appendChild(h4Element);
-    cardDiv.appendChild(imgElement);
-
-    // Aggiunta del div principale al genitore specificato
-    documentCard4.appendChild(cardDiv);
 }
 
 
-/* async function fillMain(albums) {
-    // CARD
-    for (let i = 0; i < 4; i++) {
-        const albumData = await getFetch('album', albums[i]);
-        createCard1(albumData);
-    }
-
-    // CARD 2 
-    for (let i = 0; i < 8; i++) {
-        const albumData = await getFetch('album', albums[i]);
-        createCard2(albumData);
-    }
-
-    // CARD 3 
-    for (let i = 0; i < 7; i++) {
-        const albumData = await getFetch('album', albums[i]);
-        createCard3(albumData, false, documentCard3Box);
-        if (i > 6) {
-            createCard3(albumData, true, documentCard3Box);
-        }
-    }
-
-    for (let i = 7; i < 12; i++) {
-        const albumData = await getFetch('album', albums[i]);
-        createCard3(albumData, false, documentCard3_2Box);
-        if (i > 11) {
-            createCard3(albumData, true, documentCard3_2Box);
-        }
-    }
-} */
-
-async function fillMain() {
+async function fillIndexPage() {
     for (let i = 0; i < algorithmUserFeed.length; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i]);
+        albumData = await getFetch('album', algorithmUserFeed[i]/* , keys[1] */);
         createCard1(albumData);
     }
     // Creazione delle card di tipo 2
     for (let i = 0; i < 8; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i]);
+        albumData = await getFetch('album', algorithmUserFeed[i]/* , keys[5] */);
         createCard2(albumData);
     }
 
     // Fetch dei dati degli album e popolamento delle card di tipo 3
     for (let i = 0; i < algorithmUserFeed.length - 7; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i]);
+        albumData = await getFetch('album', algorithmUserFeed[i]/* , keys[6] */);
         createCard3(albumData, i < 5 ? false : true, documentCard3Box);
     }
 
     for (let i = 7; i < algorithmUserFeed.length; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i]);
+        albumData = await getFetch('album', algorithmUserFeed[i]/* , keys[4] */);
         createCard3(albumData, i < 12 ? false : true, documentCard3_2Box);
     }
 }
 
-
 window.addEventListener('load', init);
 
-async function init() {
-    await fillMain(algorithmUserFeed);
+function init() {
+    createCardSearch();
+    fillIndexPage();
 }
 
-
-search.addEventListener('click', async (e) => {
-    e.preventDefault();
-    const main2 = document.getElementById('main2')
-    const search2 = document.getElementById('search2')
-    const mainNoFooter = document.querySelectorAll('#main > :not(#footer)');
-    mainNoFooter.forEach(element => {
-        element.style.display = 'none';
-    });
-
-    for (let i = 0; i < algorithmUserFeed.length; i++) {
-        const albumData = await getFetch('album', algorithmUserFeed[i]);
-        createCard4(albumData, i);
-    }
-    main2.style.display = 'inline';
-    search2.style.display = 'inline';
-})
-
-console.log('Geolier:', getFetch('album', '426683117'));
-console.log('Gue, Marra:', getFetch('album', '13420001'));
-console.log('Co Sang:', getFetch('album', '60357832'));
-console.log('Lazza:', getFetch('album', '309377597'));
-console.log('Club Dogo:', getFetch('album', '534017402'));
-console.log('Lee Scratch Perry:', getFetch('album', '13943974'));
-console.log('Sfera Ebbasta:', getFetch('album', '13994766'));
-console.log('Luche:', getFetch('album', '100111992'));
-console.log('Articolo 31:', getFetch('album', '74308932'));
 
 function playPause() {
     if (player.paused) { //check audio is playing
@@ -295,8 +228,6 @@ function playPause() {
 
     } else {
         player.pause();
-
-
     }
 }
 
@@ -311,7 +242,7 @@ player.addEventListener('pause', function () {
 });
 
 
-function togglePlayer(albumPreview, i, albumTitle, albumArtist, albumImg) {
+function togglePlayer(albumPreview, element, albumTitle, albumArtist, albumImg) {
     const player = document.getElementById('player');
     documentPlayerImg.setAttribute('src', albumImg);
     documentPlayerTitle.innerText = albumTitle;
@@ -320,30 +251,25 @@ function togglePlayer(albumPreview, i, albumTitle, albumArtist, albumImg) {
         player.src = albumPreview;
         player.load();
         player.play();
-        i.classList.remove('bi-play-circle-fill');
-        i.classList.add('bi-pause-circle-fill');
+        element.classList.remove('bi-play-circle-fill');
+        element.classList.add('bi-pause-circle-fill');
 
     } else {
         if (player.paused) {
             player.play();
             player.addEventListener('play', function () {
-                i.classList.remove('bi-play-circle-fill');
-                i.classList.add('bi-pause-circle-fill');
+                element.classList.remove('bi-play-circle-fill');
+                element.classList.add('bi-pause-circle-fill');
             });
         } else {
             player.pause();
             player.addEventListener('pause', function () {
-                i.classList.add('bi-play-circle-fill');
-                i.classList.remove('bi-pause-circle-fill');
+                element.classList.add('bi-play-circle-fill');
+                element.classList.remove('bi-pause-circle-fill');
             });
         }
     }
 }
-
-
-
-
-
 
 function secondsToTime(duration) {
     const minuti = parseInt(duration / 60);
@@ -354,7 +280,6 @@ function secondsToTime(duration) {
     }
     return minuti + ":" + secondi;
 }
-
 
 player.addEventListener("timeupdate", (event) => {
 
@@ -378,13 +303,20 @@ player.addEventListener("timeupdate", (event) => {
     if (inputRange > 1) {
         event.currentTarget.volume = inputRange / 100;
     }
-    
+
     // Visualizziamo la barra della durata
     const barraDurata = document.querySelector('.elapsed');
     const perc = currentTime / duration * 100;
     barraDurata.style.width = perc + "%";
 });
 
+function mutaAudio() {
+    if (player.muted) {
+        player.muted = false;
+    } else {
+        player.muted = true;
+    }
+}
 
 const barraGrigia = document.querySelector(".time");
 barraGrigia.addEventListener("click", function (e) {
@@ -398,20 +330,16 @@ barraGrigia.addEventListener("click", function (e) {
     player.currentTime = nuovaDurata;
 });
 
-
-
-/* function nextTrack(){
-
+function showMain() {
+    const mainSearch = document.getElementById('mainSearch')
+    const searchbar2 = document.getElementById('searchBar2')
+    const showMain = document.getElementById('showMain');
+    const mainArtist = document.getElementById('mainArtist');
+    const mainAlbum = document.getElementById('mainAlbum');
+    showMain.style.display = 'initial'
+    mainSearch.style.display = 'none';
+    searchbar2.style.display = 'none';
+    mainArtist.style.display = 'none';
+    mainAlbum.style.display = 'none';
 }
 
-function previousTrack(){
-
-}
-
-function volume(){
-
-}
-
-function fillPlayerInfo(){
-
-}  */
