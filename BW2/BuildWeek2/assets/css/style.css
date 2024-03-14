@@ -299,7 +299,7 @@ fill: #1ED760
   background-color: rgba(255, 255, 255, 0.212);
 }
 
-#main2 {
+#mainSearch, #mainArtist, #mainAlbum {
   display: none;
 }
 
