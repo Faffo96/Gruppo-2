@@ -5,6 +5,7 @@ const documentAlbumPageYear = document.getElementById('albumPageYear');
 const documentAlbumPageTracksQuantity = document.getElementById('albumPageTracksQuantity');
 const documentAlbumPageAlbumDuration = document.getElementById('albumPageAlbumDuration');
 const documentAlbumPageAlbumImg = document.getElementById('albumPageAlbumImg');
+const documentAlbumPagePlayer = document.getElementById('albumPagePlayer')
 
 
 
@@ -15,6 +16,7 @@ function fillAlbumPage(id) {
     removeAllChildren(documentAlbumTrackList)
     // Ritarda l'esecuzione del codice all'interno di setTimeout di 1 secondo
     setTimeout(() => {
+        documentAlbumPagePlayer.setAttribute('onclick', `togglePlayer('${currentObject.mp3}', this, '${currentObject.trackTitle}','${currentObject.artist}', '${currentObject.albumImg}')`);
         documentAlbumPageAlbumImg.setAttribute('src', currentObject.albumImg);
         documentAlbumPageTitle.innerHTML = currentObject.albumTitle; 
         documentAlbumPageArtist.innerHTML = currentObject.artist;
@@ -27,7 +29,8 @@ function fillAlbumPage(id) {
             console.log(element)
             createCardAlbum(element, i);
         }
-    }, 100); // 100 millisecondi equivalgono a 1 secondo
+        
+    }, 1000); // 100 millisecondi equivalgono a 1 secondo
 }
 
 
@@ -39,6 +42,7 @@ function createCardAlbum(albumData, i) {
     // Creazione del div principale
     const mainDiv = document.createElement('div');
     mainDiv.classList.add('d-flex', 'justify-content-between', 'cardHover', 'ps-2', 'py-2', 'rounded', 'align-items-center', 'opacityHover');
+    mainDiv.setAttribute('onclick', `togglePlayer2('${albumData.preview}', '${albumData.title}','${albumData.artist.name}', '${albumData.album.cover}')`);
 
     // Creazione del primo div interno
     const innerDiv1 = document.createElement('div');
@@ -104,5 +108,4 @@ function createCardAlbum(albumData, i) {
     documentAlbumTrackList.appendChild(mainDiv);
 
 }
-
 

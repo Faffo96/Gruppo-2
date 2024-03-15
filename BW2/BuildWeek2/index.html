@@ -207,15 +207,20 @@
                     </div>
                     <div id="mainArtist">
                         <div class="d-flex flex-column text-light">
-                            <p class="mt-5">Artista verificato</p>
-                            <h1>Geolier</h1>
+                            <div class="d-flex align-content-center mt-5 mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3D91F4" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                    <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+                                  </svg>
+                                <p class="m-0 ms-2"> Artista verificato</p>
+                            </div>
+                            <h1 id="artistPageTitle"></h1>
                             <p>7.683.185 ascoltatori mensili</p>
                         </div>
                         <div class="container-fluid">
-                            <div class="row">
+                            <div class="row text-light">
                                 <div>
                                     <div class="d-flex align-items-center">
-                                        <i class="bi bi-play-circle-fill play-1 custom-2"></i>
+                                        <i class="bi bi-play-circle-fill play-1 custom-2" id="artistPagePlayer"></i>
                                         <svg width="24" height="20" fill="none" stroke="currentColor"
                                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             viewBox="0 0 24 24" class="bg-custom-3 border-custom mx-4"
@@ -232,94 +237,24 @@
                                     </div>
                                     <div>
                                         <ul class="ps-1" id="containerCardTrack">
-                                            <li
-                                                class="list-style-position-inside container-fluid mb-3 cardHover rounded opacityHover">
-                                                <div class="row align-items-center">
-                                                    <p class="col-1 mb-0 opacity-50">1</p>
-                                                    <img class="img-2 col-1 object-fit-cover"
-                                                        src="assets/imgs/artisti/Articolo31.jpg" alt="">
-                                                    <h5 class="col-6 mb-0 lh-1">Titolo</h5>
-                                                    <p class="col-2 mb-0 opacity-50">45.826.239</p>
-                                                    <div class="col-2  d-flex align-items-center">
-                                                        <svg width="24" height="20" fill="none" stroke="currentColor"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" viewBox="0 0 24 24"
-                                                            class="bg-custom-3 border-custom me-5 border-custom-2"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path
-                                                                d="M3.343 7.778a4.5 4.5 0 0 1 7.339-1.46L12 7.636l1.318-1.318a4.5 4.5 0 1 1 6.364 6.364L12 20.364l-7.682-7.682a4.501 4.501 0 0 1-.975-4.904Z">
-                                                            </path>
-                                                        </svg>
-                                                        <p class="mb-0 opacity-50">3:07</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-
+    
                                         </ul>
                                     </div>
                                 </div>
 
-                                <div class="row justify-content-evenly mt-4 p-0">
+                                <div class="row justify-content-evenly mt-4">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
-                                            <h3 class="text-white p-0"> Discografia</h3>
+                                            <h3 class="text-white p-0">Correlati</h3>
                                         </div>
-                                        <div class="">
-                                            <p class="text-white m-0 text-size-1"> mostra tutto </p>
+                                        <div class>
+                                            <p class="text-white m-0 text-size-1-5 "> mostra tutto </p>
                                         </div>
-
+    
                                     </div>
                                     <div class="d-flex p-0">
-                                        <div class="d-flex mx-auto">
-                                            <div class="d-flex m-1">
-                                                <div class="card p-2 cardHover" style="width: 191px; height: 260px;">
-                                                    <div class="text-center">
-                                                        <img src="assets/imgs/artisti/TheWeeknd.jpg"
-                                                            class="object-fit-cover" alt="..." width="161px"
-                                                            height="161px">
-                                                    </div>
-                                                    <div class="mt-2 ms-1">
-                                                        <h5 class="card-title text-white fs-6">After Hours</h5>
-                                                        <p class="card-text text-white-50 text-size-2"> The Weeknd</p>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <div class="d-flex mx-auto" id="containerArtistCorrelate"></div> <!-- CONTAINER_ARTIST_CORRELATE -->
                                     </div>
-
-                                    <div class="row justify-content-evenly mt-4 p-0">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h3 class="text-white p-0"> Artisti consigliati</h3>
-                                            </div>
-                                            <div class="">
-                                                <p class="text-white m-0 text-size-1"> mostra tutto </p>
-                                            </div>
-
-                                        </div>
-                                        <div class="d-flex p-0">
-                                            <div class="d-flex mx-auto">
-                                                <div class="d-flex m-1">
-                                                    <div class="card p-2 cardHover"
-                                                        style="width: 191px; height: 260px;">
-                                                        <div class="text-center">
-                                                            <img src="assets/imgs/artisti/TheWeeknd.jpg"
-                                                                class="object-fit-cover" alt="..." width="161px"
-                                                                height="161px">
-                                                        </div>
-                                                        <div class="mt-2 ms-1">
-                                                            <h5 class="card-title text-white fs-6">After Hours</h5>
-                                                            <p class="card-text text-white-50 text-size-2"> The Weeknd
-                                                            </p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
@@ -336,7 +271,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-play-circle-fill play-1 custom-2"></i>
+                                    <i class="bi bi-play-circle-fill play-1 custom-2" id="albumPagePlayer"></i>
                                     <svg width="24" height="20" fill="none" stroke="currentColor" stroke-linecap="round"
                                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
                                         class="bg-custom-3 mx-4 border-custom" xmlns="http://www.w3.org/2000/svg">
@@ -376,6 +311,20 @@
                                     <p class="text-size-2">6 gennaio 2023</p>
                                     <p class="text-size-1">&copy; Columbia release (P) 2023 Sony Music Entertainment Italy
                                         S.p.A.</p>
+                                </div>
+                            </div>
+                            <div class="row justify-content-evenly mt-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h3 class="text-white p-0">Correlati</h3>
+                                    </div>
+                                    <div class>
+                                        <p class="text-white m-0 text-size-1-5 "> mostra tutto </p>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex p-0">
+                                    <div class="d-flex mx-auto" id="containerMoreBy"></div> <!-- CONTAINER_MORE_BY -->
                                 </div>
                             </div>
                     </div>
@@ -455,7 +404,7 @@
                                         </path>
                                     </svg>
                                 </a>
-                                <a href="#" class="social instagram"><svg height="1em" viewBox="0 0 448 512">
+                              <a href="#" class="social instagram"><svg height="1em" viewBox="0 0 448 512">
                                         <path
                                             d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
                                         </path>
@@ -521,10 +470,10 @@
                         <path
                             d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
                     </svg>
-                    <i class="bi bi-skip-start-fill linkFooter icon-size-bigger mx-3"></i>
+                    <i class="bi bi-skip-start-fill linkFooter icon-size-bigger mx-3" onclick="previousTrack()"></i>
                     <i class="bi bi-play-circle-fill linkFooter icon-size-bigger mx-3" onclick="playPause()"
                         id="btnPlay"></i>
-                    <i class="bi bi-skip-end-fill linkFooter icon-size-bigger mx-3"></i>
+                    <i class="bi bi-skip-end-fill linkFooter icon-size-bigger mx-3" onclick="nextTrack()"></i>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-repeat linkFooter icon-size-bigger mx-3" viewBox="0 0 16 16">
                         <path
