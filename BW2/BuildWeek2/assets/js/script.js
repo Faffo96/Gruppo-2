@@ -46,12 +46,29 @@ let algorithmUserFeed = [
     '124513502',
 ]
 
+let algorithmUserFeed2 = [
+    'geolier',
+    'marracash',
+    'co sang',
+    'lee "scratch" perry',
+    'sfera ebbasta',
+    'luche',
+    'articolo 31',
+    'lazza',
+    'rose villain',
+    'tedua',
+    'gemitaiz',
+    'baby gang',
+    'emis killa',
+    'noyz narcos'
+]
+
 const getFetch = async (category, id /* key */) => {
     const url = `https://deezerdevs-deezer.p.rapidapi.com/${category}/${id}`;
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '0e88591ab3mshfb4bba544a6c2b8p1d513ejsn6b9bf8b7580e',
+            'X-RapidAPI-Key': 'e24f190dfamsh3b4e04c6923511ep1e6fbdjsn6a9e95f0b3d6',
             'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
         }
     };
@@ -144,7 +161,7 @@ function saveCurrentObject(object) {
         tracksQuantity: object.nb_tracks,
         albumDuration: object.duration,
         tracksData: object.tracks.data,
-        /* idArtist: object.artist.id; */
+        
     };
     history.push(currentObject);
 }
