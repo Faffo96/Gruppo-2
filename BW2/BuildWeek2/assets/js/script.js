@@ -11,6 +11,7 @@ const documentPlayerBtns = document.getElementsByClassName('bi-play-circle-fill'
 const documentPlayerImg = document.getElementById('playerImg');
 const documentPlayerArtist = document.getElementById('playerArtist');
 const documentPlayerTitle = document.getElementById('playerTitle');
+const documentContainerMoreBy = document.getElementById('containerMoreBy')
 let albumData;
 let currentObject = {};
 let history = [];
@@ -48,19 +49,13 @@ let algorithmUserFeed = [
 
 let algorithmUserFeed2 = [
     'geolier',
-    'marracash',
+    'Rose Villain',
     'co sang',
     'lee "scratch" perry',
     'sfera ebbasta',
     'luche',
-    'articolo 31',
+    'articolo31',
     'lazza',
-    'rose villain',
-    'tedua',
-    'gemitaiz',
-    'baby gang',
-    'emis killa',
-    'noyz narcos'
 ]
 
 const getFetch = async (category, id /* key */) => {
@@ -68,7 +63,7 @@ const getFetch = async (category, id /* key */) => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'e24f190dfamsh3b4e04c6923511ep1e6fbdjsn6a9e95f0b3d6',
+            'X-RapidAPI-Key': 'c776300d22mshd3bea6709348bbfp1dc7c8jsn11b2c60ef719',
             'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
         }
     };
@@ -85,7 +80,11 @@ const getFetch = async (category, id /* key */) => {
 function createCard1(albumData) {
     const outerDiv = document.createElement('div');
     outerDiv.classList.add('d-flex', 'cardHover', 'p-2', 'rounded');
-    outerDiv.setAttribute('onclick', `fillArtistPage()`)
+    outerDiv.onclick = function () {
+        console.log(albumData)
+        saveCurrentArtist(albumData);
+        fillArtistPage();          
+    };
 
 
     const imageDiv = document.createElement('div');
@@ -93,7 +92,7 @@ function createCard1(albumData) {
 
     const img = document.createElement('img');
     img.classList.add('rounded-5');
-    img.setAttribute('src', albumData.artist.picture_small);
+    img.setAttribute('src', albumData.data[0].artist.picture);
     img.setAttribute('alt', 'Artista');
     imageDiv.appendChild(img);
 
@@ -101,7 +100,7 @@ function createCard1(albumData) {
 
     const namePara = document.createElement('p');
     namePara.classList.add('m-0', 'text-white');
-    namePara.textContent = albumData.artist.name;
+    namePara.textContent = albumData.data[0].artist.name;
     textDiv.appendChild(namePara);
 
     const typePara = document.createElement('p');
@@ -119,17 +118,16 @@ function createCard1(albumData) {
 function createCard2(artistData) {
     const newDiv = document.createElement('div');
     newDiv.classList.add('col-3', 'px-3', 'circular-regular');
-    newDiv.onclick = function() {
+    newDiv.onclick = function () {
+        saveCurrentArtist(artistData);
         fillArtistPage();
-        saveCurrentObject(artistData);
     };
-
     const div = document.createElement('div');
     div.classList.add('card2', 'd-flex', 'align-items-center', 'bgBanner', 'rounded-2', 'p-0', 'mt-2', 'w-20');
     newDiv.appendChild(div);
 
     const img = document.createElement('img');
-    img.setAttribute('src', artistData.artist.picture_small);
+    img.setAttribute('src', artistData.data[0].artist.picture_small);
     img.setAttribute('width', '80px');
     img.setAttribute('height', '80px');
     img.classList.add('ms-0', 'rounded-start-2');
@@ -141,40 +139,55 @@ function createCard2(artistData) {
 
     const p = document.createElement('p');
     p.classList.add('m-0', 'ms-2');
-    p.textContent = artistData.artist.name;
+    p.textContent = artistData.data[0].artist.name;
     innerDiv.appendChild(p);
 
     const playIcon = document.createElement('i');
     playIcon.classList.add('bi', 'bi-play-circle-fill', 'icon-size-bigger', 'mx-3', 'playerCard2', 'custom-4');
-    playIcon.setAttribute('onclick', `togglePlayer('${artistData.tracks.data[0].preview}', this, '${artistData.tracks.data[0].title}','${artistData.artist.name}', '${artistData.cover}')`);
+    playIcon.setAttribute('onclick', `togglePlayer('${artistData.data[0].preview}', this, '${artistData.data[0].title}','${artistData.data[0].artist.name}', '${artistData.data[0].album.cover}'); event.stopPropagation();`);
     innerDiv.appendChild(playIcon);
 
     documentCard2.appendChild(newDiv);
 }
 
-function saveCurrentObject(object) {
+async function saveCurrentObject(object) {
     currentObject = {
-        albumTitle: object.title,
-        artist: object.artist.name,
-        albumImg: object.cover,
-        releaseDate: object.release_date,
-        tracksQuantity: object.nb_tracks,
-        albumDuration: object.duration,
-        tracksData: object.tracks.data,
-        
+        albumTitle: await object.title,
+        artist: await object.artist.name,
+        albumImg: await object.cover,
+        releaseDate: await object.release_date,
+        tracksQuantity: await object.nb_tracks,
+        albumDuration: await object.duration,
+        tracksData: await object.tracks.data,
+        mp3: await object.tracks.data[0].preview,
+        trackTitle: await object.tracks.data[0].title,
     };
     history.push(currentObject);
 }
 
+function saveCurrentArtist(object) {
+    console.log(object)
+    currentObject = {
+        artist: object.data[0].artist.name,
+        albumImg: object.data[0].artist.picture_small,
+        albumImg2: object.data[0].album.cover,
+        trackDuration: object.data[0].duration,
+        artistTracks: object.data,
+        mp3: object.data[0].preview,
+        trackTitle: object.data[0].title,
+    }
+}
+
+
+
 function createCard3(albumData, isNone, targetElement) {
+    console.log(albumData)
     const outerDiv = document.createElement('div');
     outerDiv.classList.add('card3', 'd-flex', 'm-1');
-    outerDiv.onclick = function() {
+    outerDiv.onclick = function () {
         fillAlbumPage(this);
         saveCurrentObject(albumData);
     };
-/*     outerDiv.setAttribute('onclick', `fillAlbumPage(this); saveCurrentObject('${albumData.tracks.data[0].title}', this ,'${albumData.artist.name}', '${albumData.cover}'); event.stopPropagation();`); //per elena
- */
     if (isNone) {
         outerDiv.classList.add('d-xxl-none', 'card-3XL');
     }
@@ -233,13 +246,17 @@ function clearMain() {
 
 
 async function fillIndexPage() {
-    for (let i = 0; i < algorithmUserFeed.length; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i], '' /* , keys[1] */);
-        createCard1(albumData);
+    const promises = [];
+    for (let i = 0; i < algorithmUserFeed2.length; i++) {
+        promises.push(getFetch('search', ('?q=' + algorithmUserFeed2[i])));
+    }
+    const albumsData = await Promise.all(promises);
+    for (let i = 0; i < albumsData.length; i++) {
+        createCard1(albumsData[i]);
     }
     // Creazione delle card di tipo 2
     for (let i = 0; i < 8; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i], '' /* , keys[5] */);
+        albumData = await getFetch('search', ('?q=' + algorithmUserFeed2[i]), '' /* , keys[5] */);
         createCard2(albumData);
     }
 
@@ -247,6 +264,12 @@ async function fillIndexPage() {
     for (let i = 0; i < algorithmUserFeed.length - 7; i++) {
         albumData = await getFetch('album', algorithmUserFeed[i], '' /* , keys[6] */);
         createCard3(albumData, i < 5 ? false : true, documentCard3Box);
+
+    }
+
+    for (let i = 0; i < algorithmUserFeed.length - 7; i++) {
+        albumData = await getFetch('album', algorithmUserFeed[i], '' /* , keys[6] */);
+        createCard3(albumData, i < 5 ? false : true, documentContainerMoreBy);
     }
 
     for (let i = 7; i < algorithmUserFeed.length; i++) {
@@ -282,6 +305,7 @@ player.addEventListener('pause', function () {
 });
 
 
+
 function togglePlayer(albumPreview, element, albumTitle, albumArtist, albumImg) {
     const player = document.getElementById('player');
     documentPlayerImg.setAttribute('src', albumImg);
@@ -311,9 +335,33 @@ function togglePlayer(albumPreview, element, albumTitle, albumArtist, albumImg) 
     }
 }
 
+function togglePlayer2(albumPreview, albumTitle, albumArtist, albumImg) {
+    const player = document.getElementById('player');
+    documentPlayerImg.setAttribute('src', albumImg);
+    documentPlayerTitle.innerText = albumTitle;
+    documentPlayerArtist.innerText = albumArtist;
+    if (player.src !== albumPreview) {
+        player.src = albumPreview;
+        player.load();
+        player.play();
+      
+    } else {
+        if (player.paused) {
+            player.play();
+            player.addEventListener('play', function () {
+            });
+        } else {
+            player.pause();
+            player.addEventListener('pause', function () {
+              
+            });
+        }
+    }
+}
+
 function secondsToTime(duration, minSeparator = ":", secSeparator = "") {
     const minutes = parseInt(duration / 60);
-    let seconds = parseInt(duration % 60); 
+    let seconds = parseInt(duration % 60);
 
     if (seconds < 10) {
         seconds = "0" + seconds;

@@ -22,6 +22,7 @@ function createCard4(albumData, index) {
     cardDiv.classList.add('rounded-3', 'cardGener', 'mb-3');
     // Assegna un colore di sfondo dalla lista di colori in base all'indice della card
     cardDiv.style.backgroundColor = colors[index % colors.length];
+    
 
 
     // Creazione dell'elemento h4 con la classe specificata e il testo "Musica"
