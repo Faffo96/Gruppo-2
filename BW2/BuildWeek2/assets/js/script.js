@@ -46,12 +46,12 @@ let algorithmUserFeed = [
     '124513502',
 ]
 
-const getFetch = async (category, id, /* key */) => {
+const getFetch = async (category, id /* key */) => {
     const url = `https://deezerdevs-deezer.p.rapidapi.com/${category}/${id}`;
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'e24f190dfamsh3b4e04c6923511ep1e6fbdjsn6a9e95f0b3d6',
+            'X-RapidAPI-Key': '0e88591ab3mshfb4bba544a6c2b8p1d513ejsn6b9bf8b7580e',
             'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
         }
     };
@@ -99,17 +99,20 @@ function createCard1(albumData) {
 }
 
 
-function createCard2(albumData) {
+function createCard2(artistData) {
     const newDiv = document.createElement('div');
     newDiv.classList.add('col-3', 'px-3', 'circular-regular');
-    newDiv.setAttribute('onclick', `fillArtistPage()`)
+    newDiv.onclick = function() {
+        fillArtistPage();
+        saveCurrentObject(artistData);
+    };
 
     const div = document.createElement('div');
     div.classList.add('card2', 'd-flex', 'align-items-center', 'bgBanner', 'rounded-2', 'p-0', 'mt-2', 'w-20');
     newDiv.appendChild(div);
 
     const img = document.createElement('img');
-    img.setAttribute('src', albumData.artist.picture_small);
+    img.setAttribute('src', artistData.artist.picture_small);
     img.setAttribute('width', '80px');
     img.setAttribute('height', '80px');
     img.classList.add('ms-0', 'rounded-start-2');
@@ -121,26 +124,27 @@ function createCard2(albumData) {
 
     const p = document.createElement('p');
     p.classList.add('m-0', 'ms-2');
-    p.textContent = albumData.artist.name;
+    p.textContent = artistData.artist.name;
     innerDiv.appendChild(p);
 
     const playIcon = document.createElement('i');
     playIcon.classList.add('bi', 'bi-play-circle-fill', 'icon-size-bigger', 'mx-3', 'playerCard2', 'custom-4');
-    playIcon.setAttribute('onclick', `togglePlayer('${albumData.tracks.data[0].preview}', this, '${albumData.tracks.data[0].title}','${albumData.artist.name}', '${albumData.cover}')`);
+    playIcon.setAttribute('onclick', `togglePlayer('${artistData.tracks.data[0].preview}', this, '${artistData.tracks.data[0].title}','${artistData.artist.name}', '${artistData.cover}')`);
     innerDiv.appendChild(playIcon);
 
     documentCard2.appendChild(newDiv);
 }
 
-function saveCurrentObject(albumData) {
+function saveCurrentObject(object) {
     currentObject = {
-        albumTitle: albumData.title,
-        artist: albumData.artist.name,
-        albumImg: albumData.cover,
-        releaseDate: albumData.release_date,
-        tracksQuantity: albumData.nb_tracks,
-        albumDuration: albumData.duration,
-        tracksData: albumData.tracks.data,
+        albumTitle: object.title,
+        artist: object.artist.name,
+        albumImg: object.cover,
+        releaseDate: object.release_date,
+        tracksQuantity: object.nb_tracks,
+        albumDuration: object.duration,
+        tracksData: object.tracks.data,
+        /* idArtist: object.artist.id; */
     };
     history.push(currentObject);
 }
@@ -213,23 +217,23 @@ function clearMain() {
 
 async function fillIndexPage() {
     for (let i = 0; i < algorithmUserFeed.length; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i]/* , keys[1] */);
+        albumData = await getFetch('album', algorithmUserFeed[i], '' /* , keys[1] */);
         createCard1(albumData);
     }
     // Creazione delle card di tipo 2
     for (let i = 0; i < 8; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i]/* , keys[5] */);
+        albumData = await getFetch('album', algorithmUserFeed[i], '' /* , keys[5] */);
         createCard2(albumData);
     }
 
     // Fetch dei dati degli album e popolamento delle card di tipo 3
     for (let i = 0; i < algorithmUserFeed.length - 7; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i]/* , keys[6] */);
+        albumData = await getFetch('album', algorithmUserFeed[i], '' /* , keys[6] */);
         createCard3(albumData, i < 5 ? false : true, documentCard3Box);
     }
 
     for (let i = 7; i < algorithmUserFeed.length; i++) {
-        albumData = await getFetch('album', algorithmUserFeed[i]/* , keys[4] */);
+        albumData = await getFetch('album', algorithmUserFeed[i], '' /* , keys[4] */);
         createCard3(albumData, i < 12 ? false : true, documentCard3_2Box);
     }
 }
@@ -240,7 +244,6 @@ function init() {
     createCardSearch();
     fillIndexPage();
 }
-
 
 function playPause() {
     if (player.paused) { //check audio is playing
