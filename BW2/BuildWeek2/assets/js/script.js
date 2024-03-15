@@ -12,6 +12,10 @@ const documentPlayerImg = document.getElementById('playerImg');
 const documentPlayerArtist = document.getElementById('playerArtist');
 const documentPlayerTitle = document.getElementById('playerTitle');
 let albumData;
+let currentObject = {};
+let history = [];
+
+
 
 /* const keys = [
     'c776300d22mshd3bea6709348bbfp1dc7c8jsn11b2c60ef719',
@@ -125,15 +129,31 @@ function createCard2(albumData) {
     playIcon.setAttribute('onclick', `togglePlayer('${albumData.tracks.data[0].preview}', this, '${albumData.tracks.data[0].title}','${albumData.artist.name}', '${albumData.cover}')`);
     innerDiv.appendChild(playIcon);
 
-
     documentCard2.appendChild(newDiv);
+}
+
+function saveCurrentObject(albumData) {
+    currentObject = {
+        albumTitle: albumData.title,
+        artist: albumData.artist.name,
+        albumImg: albumData.cover,
+        releaseDate: albumData.release_date,
+        tracksQuantity: albumData.nb_tracks,
+        albumDuration: albumData.duration,
+        tracksData: albumData.tracks.data,
+    };
+    history.push(currentObject);
 }
 
 function createCard3(albumData, isNone, targetElement) {
     const outerDiv = document.createElement('div');
     outerDiv.classList.add('card3', 'd-flex', 'm-1');
-    outerDiv.setAttribute('onclick', `fillAlbumPage(this);`)
-
+    outerDiv.onclick = function() {
+        fillAlbumPage(this);
+        saveCurrentObject(albumData);
+    };
+/*     outerDiv.setAttribute('onclick', `fillAlbumPage(this); saveCurrentObject('${albumData.tracks.data[0].title}', this ,'${albumData.artist.name}', '${albumData.cover}'); event.stopPropagation();`); //per elena
+ */
     if (isNone) {
         outerDiv.classList.add('d-xxl-none', 'card-3XL');
     }
@@ -271,15 +291,20 @@ function togglePlayer(albumPreview, element, albumTitle, albumArtist, albumImg) 
     }
 }
 
-function secondsToTime(duration) {
-    const minuti = parseInt(duration / 60);
-    let secondi = parseInt(duration % 60); // Utilizziamo parseInt per assicurarci che i secondi siano un numero intero
+function secondsToTime(duration, minSeparator = ":", secSeparator = "") {
+    const minutes = parseInt(duration / 60);
+    let seconds = parseInt(duration % 60); 
 
-    if (secondi < 10) {
-        secondi = "0" + secondi;
+    if (seconds < 10) {
+        seconds = "0" + seconds;
     }
-    return minuti + ":" + secondi;
+    return minutes + minSeparator + seconds + secSeparator;
 }
+
+// Esempi di utilizzo:
+console.log(secondsToTime(120)); // Output: "2:00"
+console.log(secondsToTime(65, "m", "s")); // Output: "1m05s"
+
 
 player.addEventListener("timeupdate", (event) => {
 
@@ -291,7 +316,7 @@ player.addEventListener("timeupdate", (event) => {
     if (!isNaN(duration)) {
         let remTime = duration - currentTime;
 
-        curTime.innerText = secondsToTime(currentTime);
+        curTime.innerText = secondsToTime(currentTime, ":", "");
         if (remTime < 0) {
             remTime = 0; // Impostiamo il tempo rimanente a zero se è negativo
         }
@@ -341,5 +366,11 @@ function showMain() {
     searchbar2.style.display = 'none';
     mainArtist.style.display = 'none';
     mainAlbum.style.display = 'none';
+}
+
+function removeAllChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
 }
 
