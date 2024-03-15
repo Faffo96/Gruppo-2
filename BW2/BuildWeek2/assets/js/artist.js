@@ -1,20 +1,20 @@
 const documentContainerCardTrack = document.getElementById('containerCardTrack')
 
+const urll = 'https://deezerdevs-deezer.p.rapidapi.com/search?q=geolier';
+
 async function fillArtistPage() {
     clearMain();
     const mainArtist = document.getElementById('mainArtist');
     mainArtist.style.display = 'initial';
     console.log(currentObject)
     const namee = currentObject.artist;
-console.log(namee)
-const artistFeed = await getFetch('*search', namee);
+const artistFeed = await getFetch('searchh',  ('?q=' + namee));
 console.log(artistFeed);
 }
 
 
 
 function createCardTrack(albumData) {
-    
     fabio.innerHtml = 
     `<li class="list-style-position-inside container-fluid mb-3 cardHover rounded opacityHover" >
         <div class="row align-items-center">
