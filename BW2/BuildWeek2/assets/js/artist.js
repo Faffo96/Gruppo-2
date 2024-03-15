@@ -8,7 +8,7 @@ async function fillArtistPage() {
     mainArtist.style.display = 'initial';
     console.log(currentObject)
     const namee = currentObject.artist;
-const artistFeed = await getFetch('searchh',  ('?q=' + namee));
+const artistFeed = await getFetch('search',  ('?q=' + namee));
 console.log(artistFeed);
 }
 
